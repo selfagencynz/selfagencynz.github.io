@@ -53,12 +53,12 @@ body {
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  text-decoration: underline;
-  transition: none;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
 }
 
 .navbar .nav-links a:hover {
-  color: #000; /* no color change */
+  text-decoration: underline;
 }
 
 /* Main Content */
@@ -96,53 +96,14 @@ body {
 }
 
 .footer a {
-  color: #ff9800;
-  text-decoration: underline;
+  color: #fff;
+  text-decoration: none;
   font-weight: bold;
-  transition: none;
 }
 
 .footer a:hover {
-  color: #ff9800; /* no color change */
-}
-
-/* Grid for general cards */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card {
-  background-color: #111;
-  border: 1px solid #333;
-  text-align: center;
-  padding: 1rem;
-  transition: transform 0.2s, border-color 0.3s;
   color: #fff;
   text-decoration: none;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  border-color: #ff9800;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.caption {
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /* Talent Grid */
@@ -155,30 +116,23 @@ body {
   margin-top: 2rem;
 }
 
-/* Talent images default style */
-.talent-grid img {
-  width: 150px;
-  height: auto;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  filter: grayscale(100%);
-}
-
-/* Ngahere special hover overlay */
+/* Talent image cards */
 .talent-card {
   position: relative;
   width: 150px;
-  height: auto;
+  height: 225px;
+  overflow: hidden;
 }
 
 .talent-img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
   filter: grayscale(100%);
+  display: block;
 }
 
+/* Hover overlay text */
 .overlay-text {
   position: absolute;
   top: 50%;
@@ -223,16 +177,13 @@ body {
     gap: 1rem;
   }
 
-  .talent-grid img {
+  .talent-card {
     width: 100px;
+    height: 150px;
   }
 
   .logo-img {
     height: 30px;
-  }
-
-  .talent-card {
-    width: 100px;
   }
 }
 
