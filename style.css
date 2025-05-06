@@ -24,7 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-bottom: 1px solid #333;
   flex-wrap: wrap;
 }
@@ -53,8 +53,8 @@ body {
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  text-decoration: none;
   transition: text-decoration 0.3s ease;
+  text-decoration: none;
 }
 
 .navbar .nav-links a:hover {
@@ -64,26 +64,56 @@ body {
 /* Main Content */
 .main-content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 4rem 1rem;
-  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .main-content h1 {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center;
 }
 
-.main-content video {
-  max-width: 100%;
-  height: auto;
+.main-content p {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Application Form */
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.application-form label {
+  font-weight: bold;
+}
+
+.application-form input,
+.application-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.application-form button {
+  padding: 0.75rem;
+  background-color: #ff9800;
+  color: #000;
   border: none;
-  outline: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.application-form button:hover {
+  background-color: #e68900;
 }
 
 /* Footer */
@@ -100,91 +130,3 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
-
-.footer a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Talent Grid */
-.talent-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 2rem;
-  justify-items: center;
-  align-items: center;
-  margin-top: 2rem;
-  padding: 0 1rem;
-}
-
-/* Talent image cards */
-.talent-card {
-  position: relative;
-  width: 150px;
-  height: 225px;
-  overflow: hidden;
-}
-
-.talent-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%);
-  display: block;
-}
-
-/* Hover overlay text */
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1rem;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.talent-card:hover .overlay-text {
-  opacity: 1;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .main-content {
-    padding: 2rem 1rem;
-  }
-
-  .main-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .talent-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1rem;
-  }
-
-  .talent-card {
-    width: 100px;
-    height: 150px;
-  }
-
-  .logo-img {
-    height: 30px;
-  }
-}
-
