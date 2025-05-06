@@ -11,8 +11,26 @@
       background: #f4f4f4;
     }
 
+    nav {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
     h1 {
       text-align: center;
+      margin-top: 4rem; /* So it doesn't sit behind the nav */
       margin-bottom: 2rem;
     }
 
@@ -54,18 +72,24 @@
   </style>
 </head>
 <body>
+
+  <nav>
+    <a href="index.html">← Home</a>
+  </nav>
+
   <h1>Talent</h1>
   <div class="grid">
     <a href="ursula.html" class="card">
       <img src="ursula.jpg" alt="Ursula">
-      <div class="caption">Person 1</div>
+      <div class="caption">Ursula</div>
     </a>
     <a href="ngahere.html" class="card">
       <img src="ngahere.jpeg" alt="Ngahere">
-      <div class="caption">Person 2</div>
+      <div class="caption">Ngahere</div>
     </a>
     <!-- Add more cards as needed -->
   </div>
 </body>
 </html>
+
 
