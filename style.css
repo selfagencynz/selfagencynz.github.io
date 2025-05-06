@@ -17,12 +17,16 @@ body {
 
 /* Navigation Bar */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
-  background-color: #FFFFFF
+  background-color: #FFFFFF;
   border-bottom: 1px solid #333;
+  flex-wrap: wrap;
 }
 
 .navbar .logo {
@@ -32,6 +36,12 @@ body {
   text-transform: uppercase;
   color: #000;
   margin-right: auto;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .navbar .nav-links {
@@ -44,11 +54,12 @@ body {
 }
 
 .navbar .nav-links a {
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .navbar .nav-links a:hover {
@@ -99,6 +110,8 @@ body {
 .footer a:hover {
   color: #fff;
 }
+
+/* Grid for generic cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -136,6 +149,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 /* Grid specifically for talent page */
 .talent-grid {
   display: grid;
@@ -143,6 +157,7 @@ body {
   gap: 2rem;
   justify-items: center;
   align-items: center;
+  margin-top: 2rem;
 }
 
 /* Talent image links */
@@ -153,9 +168,42 @@ body {
   border-radius: 0;
   box-shadow: none;
 }
-.logo-img {
-  height: 40px; /* adjust as needed */
-  width: auto;
-  display: block;
+
+/* -----------------------
+   Mobile Responsive Styles
+------------------------- */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .talent-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+
+  .talent-grid img {
+    width: 100px;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
 }
 
