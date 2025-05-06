@@ -153,4 +153,9 @@ body {
   border-radius: 0;
   box-shadow: none;
 }
+.logo-img {
+  height: 40px; /* adjust as needed */
+  width: auto;
+  display: block;
+}
 
