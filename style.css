@@ -115,6 +115,16 @@ body {
 .application-form button:hover {
   background-color: #e68900;
 }
+.bio {
+  max-width: 800px;
+  margin: 1rem auto 2rem auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
+  padding: 0 1rem;
+}
+
 
 /* Footer */
 .footer {
