@@ -136,4 +136,21 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+/* Grid specifically for talent page */
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Talent image links */
+.talent-grid img {
+  width: 150px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
 
