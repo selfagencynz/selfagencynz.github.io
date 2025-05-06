@@ -1,94 +1,70 @@
-/* Reset and base styles */
-* {
-  box-sizing: border-box;
+/* Reset some basic styles */
+body, h1, ul, li, a {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #ffffff;
-  color: #000000;
-  padding: 2rem;
-  line-height: 1.6;
-}
-
-/* Navigation link to Home */
-nav {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-nav a {
   text-decoration: none;
-  color: #000000;
+  list-style: none;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-/* Heading */
-h1 {
+.navbar .nav-links li {
+  display: inline;
+  margin-left: 20px;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #ff9800;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
   text-align: center;
-  font-size: 2.5rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  font-weight: 300;
 }
 
-/* Grid layout for cards */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.main-content h1 {
+  margin-bottom: 20px;
 }
 
-/* Card styling */
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.card:hover img {
-  transform: scale(1.05);
-}
-
-/* Caption overlay */
-.caption {
-  position: absolute;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
-  color: #000000;
-  width: 100%;
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #fff;
   text-align: center;
   padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-  transition: background 0.3s ease;
 }
 
-.card:hover .caption {
-  background: rgba(255, 255, 255, 1);
+.footer a {
+  color: #ff9800;
 }
+
