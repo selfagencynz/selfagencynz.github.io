@@ -24,17 +24,12 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-bottom: 1px solid #333;
   flex-wrap: wrap;
 }
 
 .navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #000;
   margin-right: auto;
 }
 
@@ -58,12 +53,12 @@ body {
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  transition: color 0.3s ease;
-  text-decoration: none;
+  text-decoration: underline;
+  transition: none;
 }
 
 .navbar .nav-links a:hover {
-  color: #ff9800;
+  color: #000; /* no color change */
 }
 
 /* Main Content */
@@ -102,16 +97,16 @@ body {
 
 .footer a {
   color: #ff9800;
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: none;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: #ff9800; /* no color change */
 }
 
-/* Grid for generic cards */
+/* Grid for general cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -150,7 +145,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* Grid specifically for talent page */
+/* Talent Grid */
 .talent-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -160,18 +155,48 @@ body {
   margin-top: 2rem;
 }
 
-/* Talent image links */
+/* Talent images default style */
 .talent-grid img {
   width: 150px;
   height: auto;
   border: none;
   border-radius: 0;
   box-shadow: none;
+  filter: grayscale(100%);
 }
 
-/* -----------------------
-   Mobile Responsive Styles
-------------------------- */
+/* Ngahere special hover overlay */
+.talent-card {
+  position: relative;
+  width: 150px;
+  height: auto;
+}
+
+.talent-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.talent-card:hover .overlay-text {
+  opacity: 1;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -204,6 +229,10 @@ body {
 
   .logo-img {
     height: 30px;
+  }
+
+  .talent-card {
+    width: 100px;
   }
 }
 
