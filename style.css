@@ -495,15 +495,11 @@ body.page-cast .content .text-section p {
   font-family: 'Playfair Display', serif; /* Serif for text */
 }
 
-/* Casting Form: Right-aligned, positioned beside text */
 .casting-form {
-  max-width: 600px;  /* Max width for the form */
-  width: 100%;  /* Make form take the full width available */
-  padding: 2rem;
-  background: #f9f9f9;  /* Light background for form */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  flex-shrink: 0; /* Prevent form from shrinking */
+  /* remove width:100% and flex-shrink */
+  flex: 0 1 600px;   /* do not grow, *do* shrink if needed, base = 600px */
+  max-width: 600px;  /* still caps it */
+  /* … */
 }
 
 /* Casting Form Labels */
