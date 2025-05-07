@@ -197,5 +197,13 @@ footer.footer a:hover {
     flex-direction: column;
     align-items: flex-start;
   }
+  .profile-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  object-fit: cover;
+}
 }
 
