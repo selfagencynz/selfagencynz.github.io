@@ -83,6 +83,7 @@ footer {
   padding: 1rem 0;
   position: relative;
   width: 100%;
+  font-family: 'Times New Roman', Times, serif;
   margin-top: auto;  /* Ensure footer stays at the bottom */
 }
 
@@ -90,6 +91,7 @@ footer a {
   color: #fff;  /* White color for links */
   text-decoration: none;  /* No underline */
   transition: none;  /* Disable hover color change */
+  font-family: 'Times New Roman', Times, serif;
 }
 
 footer a:hover {
