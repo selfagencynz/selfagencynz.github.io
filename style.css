@@ -28,8 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1.5rem 1rem;
-  background-color: #fff;    /* white header background */
-  border-bottom: 1px solid #333;
+  background-color: #fff;    /* white header */
   flex-wrap: wrap;
 }
 
@@ -233,21 +232,20 @@ body {
   Footer
 ============================================================*/
 .footer {
-  background-color: #fff;    /* white footer background */
-  color: #000;               /* black text */
+  background-color: #000;    /* black footer */
+  color: #fff;               /* white text */
   text-align: center;
   padding: 2rem 1rem;
-  border-top: 1px solid #333;
 }
 
 .footer a {
-  color: #000;               /* black link text */
+  color: #fff;               /* white link text */
   text-decoration: none;
   font-weight: bold;
 }
 
 .footer a:hover {
-  color: #000;               /* no change on hover */
+  color: #fff;               /* no change on hover */
 }
 
 /*============================================================
@@ -293,5 +291,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
 
