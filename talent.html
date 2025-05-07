@@ -11,55 +11,57 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="logo.png" alt="Logo" class="logo-img" />
-    </a>
-  </div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="talent.html">Talent</a></li>
-     <li><a href="cast.html">Cast</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">Reach Us</a>
-      <ul class="dropdown-menu">
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="be_represented_by_us.html">Be represented by us</a></li>
-      </ul>
-    </li>
-  </ul>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="talent.html">Talent</a></li>
+      <li><a href="cast.html">Cast</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Reach Us</a>
+        <ul class="dropdown-menu">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="be_represented_by_us.html">Be represented by us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <main class="main-content">
+    <h1>Our Talent</h1>
     <div class="talent-grid">
 
       <!-- Ursula -->
       <a href="ursula.html" class="talent-card">
-        <img src="ursula.jpg" alt="Ursula" class="talent-img">
+        <img src="ursula.jpg" alt="Portrait of Ursula, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">Ursula ✈︎ </div>
       </a>
 
       <!-- Ngahere -->
       <a href="ngahere.html" class="talent-card">
-        <img src="ngahere.jpeg" alt="Ngahere" class="talent-img">
+        <img src="ngahere.jpeg" alt="Portrait of Ngahere, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">NGAHERE</div>
       </a>
 
       <!-- Nayesha -->
       <a href="nayesha.html" class="talent-card">
-        <img src="nayesha.jpeg" alt="Nayesha" class="talent-img">
+        <img src="nayesha.jpeg" alt="Portrait of Nayesha, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">NAYESHA</div>
       </a>
 
       <!-- Aaron -->
       <a href="aaron.html" class="talent-card">
-        <img src="aaron.jpeg" alt="Aaron" class="talent-img">
+        <img src="aaron.jpeg" alt="Portrait of Aaron, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">AARON</div>
       </a>
 
       <!-- Jake -->
       <a href="jake.html" class="talent-card">
-        <img src="jake.jpg" alt="Jake" class="talent-img">
+        <img src="jake.jpg" alt="Portrait of Jake, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">JAKE</div>
       </a>
 
@@ -73,29 +75,29 @@
     </p>
   </footer>
 
-        <!-- Place at bottom of <body> -->
-<script>
-  // Mobile/touch support: toggle dropdown on click
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggles = document.querySelectorAll('.dropdown-toggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('open');
-      });
-    });
-    // Close dropdown if clicked outside
-    document.addEventListener('click', function(e) {
+  <!-- Dropdown Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggles = document.querySelectorAll('.dropdown-toggle');
       toggles.forEach(toggle => {
-        const parent = toggle.parentElement;
-        if (!parent.contains(e.target)) {
-          parent.classList.remove('open');
-        }
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          this.parentElement.classList.toggle('open');
+        });
+      });
+      document.addEventListener('click', function(e) {
+        toggles.forEach(toggle => {
+          const parent = toggle.parentElement;
+          if (!parent.contains(e.target)) {
+            toggle.setAttribute('aria-expanded', 'false');
+            parent.classList.remove('open');
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
-
