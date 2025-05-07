@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1.5rem 1rem;
-  background-color: #000;    /* black header background */
+  background-color: #fff;    /* white header background */
   border-bottom: 1px solid #333;
   flex-wrap: wrap;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .logo-img {
-  height: 60px;             /* increased from 40px */
+  height: 60px;             /* increased logo size */
   width: auto;
   display: block;
 }
@@ -53,7 +53,7 @@ body {
 }
 
 .navbar .nav-links a {
-  color: #fff;               /* white nav links */
+  color: #000;               /* black nav links */
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -73,7 +73,6 @@ body {
   padding: 4rem 1rem;
   max-width: 90vw;
   margin: 0 auto;
-  color: #000;               /* ensure headings/text are black */
   text-align: center;
 }
 
@@ -234,21 +233,21 @@ body {
   Footer
 ============================================================*/
 .footer {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;    /* white footer background */
+  color: #000;               /* black text */
   text-align: center;
   padding: 2rem 1rem;
   border-top: 1px solid #333;
 }
 
 .footer a {
-  color: #fff;
+  color: #000;               /* black link text */
   text-decoration: none;
   font-weight: bold;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: #000;               /* no change on hover */
 }
 
 /*============================================================
@@ -294,4 +293,5 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
