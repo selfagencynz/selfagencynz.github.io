@@ -210,21 +210,22 @@ body.page-profile .profile-text .enter-button {
   Profile Showcase (linear image list)
 -----------------------------------*/
 
-/* 1) Two‑column layout: text + full‑width image list */
+/* 1) Two‑column layout: narrow text, wide images */
 body.page-showcase .profile-gallery {
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) 1fr;
-  gap: 2rem;
+  /* text column: min 150px, max 250px; image column: take the rest */
+  grid-template-columns: minmax(150px, 250px) 1fr;
+  gap: 1rem;               /* cut the gap in half */
   padding: 2rem 1rem;
   width: 100%;
   margin: 0 auto;
 }
 
-/* 2) Inner grid becomes a simple vertical list */
+/* 2) Vertical list */
 body.page-showcase .profile-gallery .masonry-grid {
-  grid-column: 2;    /* occupy the image column */
-  display: block;    /* no grid or columns inside */
-  margin: 0;         /* reset JS margins */
+  grid-column: 2;    /* occupy the full image column */
+  display: block;
+  margin: 0;
   padding: 0;
 }
 
@@ -233,18 +234,15 @@ body.page-showcase .masonry-grid img {
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;  /* slightly less vertical space */
   object-fit: cover;
 }
 
-/* 4) “Digis” link as plain underlined text */
-body.page-showcase .profile-text .enter-button {
-  background: none;
-  text-decoration: underline;
-  padding: 0;
-  font-weight: normal;
-  cursor: pointer;
-}
+/* Carousel overrides (if still in use) */
+.carousel-wrapper { margin: 0; }
+.slide img { width: 50%; }
+
+/* 4) “Digis” link styling unchanged… */
 
 /* Responsive collapse on narrow viewports */
 @media (max-width: 768px) {
@@ -255,6 +253,7 @@ body.page-showcase .profile-text .enter-button {
     grid-column: 1;
   }
 }
+
 /*-----------------------------------
   Profile Showcase Carousel
 -----------------------------------*/
