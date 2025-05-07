@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -15,24 +15,25 @@
       font-family: 'Times New Roman', Times, serif;
     }
 
-    .video-container {
+    .video-wrapper {
       position: relative;
       width: 100%;
       height: 100%;
-      overflow: hidden;
     }
 
-    video {
+    .video-embed {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .logo-overlay {
@@ -55,7 +56,7 @@
       text-align: center;
       z-index: 2;
       color: #fff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
     }
 
     .bio-text {
@@ -87,36 +88,32 @@
 </head>
 <body>
 
-  <div class="video-container">
-    <video autoplay muted playsinline loop>
-      <source src="your-video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+  <div class="video-wrapper">
     
+    <!-- Vimeo Video Embed -->
+    <div class="video-embed">
+      <iframe 
+        src="https://player.vimeo.com/video/1082197586?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
 
+    <!-- Logo -->
     <div class="logo-overlay">
       <img src="logo.png" alt="SELFagency Logo" />
     </div>
 
+    <!-- Text and Button -->
     <div class="overlay-content">
       <p class="bio-text">Self Agency is a talent and modelling agency based out of Tāmaki Makaurau, Aotearoa.</p>
       <a href="talent.html" class="enter-button">Click to Enter</a>
     </div>
+
   </div>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
 
 </body>
-
-  <div style="padding:56.25% 0 0 0;position:relative;">
-  <iframe src="https://player.vimeo.com/video/1082197586?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-    frameborder="0" 
-    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-    style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Self_Agency_2022">
-  </iframe>
-  </div>
-  <script src="https://player.vimeo.com/api/player.js"></script>
-  
-  <div class="homepage-overlay">
-  <h2 class="bio-text">A creative talent agency redefining representation.</h2>
-  <a href="talent.html" class="enter-button">Click to Enter</a>
-</div>
 </html>
+
