@@ -435,14 +435,35 @@ body.page-cast .navbar .nav-links a:hover {
   color: #f00; /* Red hover color */
 }
 
-/* Casting Form */
+/* Add some space for better layout */
+body.page-cast .content {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Align content (text + form) side by side */
+  gap: 2rem; /* Space between text and form */
+}
+
+/* Text section */
+body.page-cast .content .text-section {
+  flex: 1; /* Take up remaining space */
+  max-width: 600px; /* Limit width */
+}
+
+body.page-cast .content .text-section h1,
+body.page-cast .content .text-section p {
+  font-family: 'Playfair Display', serif; /* Serif for text */
+}
+
+/* Casting Form: Positioned to the right */
 .casting-form {
-  max-width: 800px;  /* Increase max width for larger form */
-  margin: 3rem auto; /* Center the form horizontally with margin */
+  max-width: 600px;  /* Increase max width for larger form */
   padding: 2rem;
   background: #f9f9f9;  /* Light background for form */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  flex-shrink: 0; /* Prevent form from shrinking */
 }
 
 /* Casting Form Labels */
@@ -493,16 +514,6 @@ body.page-cast .navbar .nav-links a:hover {
   background: #c00; /* Darker red on hover */
 }
 
-/* Add some space for better layout */
-body.page-cast .content {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* Responsiveness: Mobile-friendly */
 @media (max-width: 768px) {
   body.page-cast .navbar {
@@ -517,15 +528,16 @@ body.page-cast .content {
     text-align: center;
   }
 
-  .casting-form {
-    padding: 1.5rem;
-    margin: 2rem 1rem;
+  .content {
+    flex-direction: column; /* Stack content vertically on smaller screens */
   }
 
-  .casting-form button {
-    width: auto; /* Button width adjusts on smaller screens */
+  .casting-form {
+    max-width: 100%; /* Full width form on small screens */
+    margin-top: 2rem; /* Add some space above the form */
   }
 }
+
 
 
 /*-----------------------------------
