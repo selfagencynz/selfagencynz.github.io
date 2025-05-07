@@ -52,6 +52,37 @@
   <footer class="footer">
     <p><a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a></p>
   </footer>
+<script>
+  (function() {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      const slideWidth = track.clientWidth;
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateCarousel();
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+  })();
+</script>
 
 </body>
 </html>
