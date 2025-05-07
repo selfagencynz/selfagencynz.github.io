@@ -21,8 +21,10 @@ body {
   Navigation Bar (Header)
 ============================================================*/
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -30,8 +32,8 @@ body {
   padding: 1.5rem 1rem;
   background-color: #fff;
   flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional visual enhancement */
 }
-
 .navbar .logo {
   margin-right: auto;
 }
@@ -104,7 +106,7 @@ body {
 ============================================================*/
 .main-content {
   flex: 1;
-  padding: 4rem 1rem;
+  padding: 7rem 1rem 4rem; /* increased top padding to offset fixed nav */
   max-width: 90vw;
   margin: 0 auto;
   text-align: center;
