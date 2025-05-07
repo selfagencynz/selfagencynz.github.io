@@ -1,4 +1,6 @@
-/* Reset and Base Styles */
+/*============================================================
+  Reset and Base Styles
+============================================================*/
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +17,9 @@ body {
   min-height: 100vh;
 }
 
-/* Navigation Bar */
+/*============================================================
+  Navigation Bar
+============================================================*/
 .navbar {
   position: sticky;
   top: 0;
@@ -24,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
-  background-color: #FFFFFF;
+  background-color: #fff;
   border-bottom: 1px solid #333;
   flex-wrap: wrap;
 }
@@ -53,20 +57,23 @@ body {
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  transition: text-decoration 0.3s ease;
   text-decoration: none;
+  transition: text-decoration 0.3s ease;
 }
 
 .navbar .nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Main Content */
+/*============================================================
+  Main Content
+============================================================*/
 .main-content {
   flex: 1;
   padding: 4rem 1rem;
-  max-width: 800px;
+  max-width: 90vw;
   margin: 0 auto;
+  text-align: center;
 }
 
 .main-content h1 {
@@ -74,125 +81,139 @@ body {
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-align: center;
 }
 
 .main-content p {
   margin-bottom: 2rem;
-  text-align: center;
 }
 
-/* Application Form */
-.application-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/*============================================================
+  Talent Page Grid
+============================================================*/
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 90vw;
+  margin: 2rem auto;
+  justify-content: center;
 }
 
-.application-form label {
-  font-weight: bold;
+.talent-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.application-form input,
-.application-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: 'Times New Roman', Times, serif;
+.talent-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  display: block;
 }
 
-.application-form button {
-  padding: 0.75rem;
-  background-color: #ff9800;
-  color: #000;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.application-form button:hover {
-  background-color: #e68900;
-}
-.bio {
-  max-width: 800px;
-  margin: 1rem auto 2rem auto;
-  font-size: 1rem;
-  line-height: 1.6;
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
-  text-align: center;
-  padding: 0 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
+.talent-card:hover .overlay-text {
+  opacity: 1;
+}
 
-/* Two‑column layout: text on left, 3‑col gallery on right */
+/*============================================================
+  Profile + Gallery Layout (e.g. Ursula page)
+============================================================*/
 .profile-gallery {
   display: grid;
   grid-template-columns: minmax(200px, 1fr) 3fr;
   gap: 2rem;
-  align-items: start;      /* top‑align text & gallery */
+  align-items: start;
   max-width: 90vw;
   margin: 2rem auto;
 }
 
-/* Ensure gallery still 3 columns within its grid cell */
 .profile-gallery .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
-/* Remove any fixed width on gallery from previous rules */
-.profile-gallery .gallery,
 .profile-gallery .gallery img {
   width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 0;
+  display: block;
 }
 
-/* Profile text styling (optional tweaks) */
 .profile-text {
-  padding-top: /* match any vertical offset you want, e.g. */ 0.5rem;
+  /* optional top offset */
+  padding-top: 0.5rem;
 }
 
-/* Mobile: stack into one column */
-@media (max-width: 600px) {
-  .profile-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-text {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+/*============================================================
+  Generic Gallery (if used elsewhere)
+============================================================*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 90vw;
+  margin: 2rem auto;
 }
 
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
 
+/*============================================================
+  Application & Contact Forms
+============================================================*/
+.application-form,
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
 
-/* Footer */
-.footer {
+.application-form label,
+.contact-form label {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.application-form input,
+.application-form textarea,
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 4px;
   background-color: #000;
   color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid #333;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.footer a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+.application-form button,
+.contact-form button {
+  padding: 0.75rem;
+  background-color: #ff9800;
+  color:
 
-@media (max-width: 500px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-}
