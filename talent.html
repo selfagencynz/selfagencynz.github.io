@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-  
+
 <body id="talent-page">
 
   <!-- Navigation Bar -->
@@ -32,64 +32,57 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="main-content">
-    <h1></h1>
+  <main class="main-content max-width">
+    <h1 class="text-center accent">Our Talent</h1>
+
     <div class="talent-grid">
-      
-      <!-- Aaron -->
+
+      <!-- Repeat for each talent -->
       <a href="aaron.html" class="talent-card">
         <img src="aaron.jpeg" alt="Portrait of Aaron, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">AARON</div>
       </a>
-      
-      <!-- Ursula -->
+
       <a href="ursula.html" class="talent-card">
         <img src="ursula.jpg" alt="Portrait of Ursula, agency talent" class="talent-img" loading="lazy">
-        <div class="overlay-text">Ursula ✈︎ </div>
+        <div class="overlay-text">Ursula ✈︎</div>
       </a>
 
-        <!-- Veronica -->
       <a href="veronica.html" class="talent-card">
         <img src="veronica.jpeg" alt="Portrait of Veronica, agency talent" class="talent-img" loading="lazy">
-        <div class="overlay-text">Veronica ✈︎ </div>
+        <div class="overlay-text">Veronica ✈︎</div>
       </a>
 
-        <!-- Nayan -->
       <a href="nayan.html" class="talent-card">
         <img src="nayan.jpg" alt="Portrait of Nayan, agency talent" class="talent-img" loading="lazy">
-        <div class="overlay-text">Nayan ✈︎ </div>
+        <div class="overlay-text">Nayan ✈︎</div>
       </a>
 
-      <!-- Ngahere -->
       <a href="ngahere.html" class="talent-card">
         <img src="ngahere.jpeg" alt="Portrait of Ngahere, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">NGAHERE</div>
       </a>
 
-      <!-- Nayesha -->
       <a href="nayesha.html" class="talent-card">
         <img src="nayesha.jpeg" alt="Portrait of Nayesha, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">NAYESHA</div>
       </a>
 
-      <!-- Jake -->
       <a href="jake.html" class="talent-card">
         <img src="jake.jpg" alt="Portrait of Jake, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">JAKE</div>
       </a>
 
-        <!-- Elliot -->
       <a href="elliot.html" class="talent-card">
         <img src="elliot.jpg" alt="Portrait of Elliot, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">ELLIOT</div>
       </a>
-      
-       <!-- Sam -->
+
       <a href="sam.html" class="talent-card">
-        <img src="XXXX" alt="Portrait of Sam, agency talent" class="talent-img" loading="lazy">
+        <img src="sam.jpg" alt="Portrait of Sam, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">SAM</div>
       </a>
-      
+
     </div>
   </main>
 
@@ -112,6 +105,7 @@
           this.parentElement.classList.toggle('open');
         });
       });
+
       document.addEventListener('click', function(e) {
         toggles.forEach(toggle => {
           const parent = toggle.parentElement;
