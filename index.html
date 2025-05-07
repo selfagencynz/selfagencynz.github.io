@@ -35,12 +35,38 @@
       z-index: -1;
     }
 
-    .enter-button {
+    .logo-overlay {
       position: absolute;
-      top: 70%;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .logo-overlay img {
+      height: 60px;
+      width: auto;
+    }
+
+    .overlay-content {
+      position: absolute;
+      top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      z-index: 2;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    }
+
+    .bio-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+      max-width: 600px;
+    }
+
+    .enter-button {
+      background-color: rgba(255, 255, 255, 0.85);
       color: #000;
       padding: 1rem 2rem;
       font-size: 1rem;
@@ -67,7 +93,14 @@
       Your browser does not support the video tag.
     </video>
 
-    <a href="talent.html" class="enter-button">Click to Enter</a>
+    <div class="logo-overlay">
+      <img src="logo.png" alt="SELFagency Logo" />
+    </div>
+
+    <div class="overlay-content">
+      <p class="bio-text">SELFagency represents diverse and compelling talent across fashion, film, and media.</p>
+      <a href="talent.html" class="enter-button">Click to Enter</a>
+    </div>
   </div>
 
 </body>
