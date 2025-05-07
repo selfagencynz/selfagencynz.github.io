@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
@@ -21,7 +21,7 @@
       <li><a href="talent.html">Talent</a></li>
       <li><a href="cast.html">Cast</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Reach Us</a>
+        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Reach Us</a>
         <ul class="dropdown-menu">
           <li><a href="contact.html">Contact</a></li>
           <li><a href="be_represented_by_us.html">Be represented by us</a></li>
@@ -31,15 +31,15 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="main-content">
+  <main class="main-content max-width">
     <section class="profile-gallery">
-      <div class="profile-text">
-        <h1>Aaron</h1>
+      <div class="profile-text text-center">
+        <h1 class="accent">Aaron</h1>
         <p class="bio">He/Him</p>
-        <p><a href="aaron.digis.html">digis</a></p>
+        <p><a href="aaron.digis.html" class="enter-button">View Digis</a></p>
       </div>
 
-      <div class="masonry-grid">
+      <div class="talent-grid">
         <img src="assets/images/talent/aaron/WMaaron2.jpg" alt="Aaron Image 1" />
         <img src="assets/images/talent/aaron/WMaaron4.jpg" alt="Aaron Image 2" />
         <img src="assets/images/talent/aaron/nomd_aaron1.jpeg" alt="Aaron Image 3" />
@@ -53,45 +53,34 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>
-      <a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a>
-    </p>
+    <p><a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a></p>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Dropdown toggle script -->
   <script>
-    // Dropdown toggle
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const toggles = document.querySelectorAll('.dropdown-toggle');
       toggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
+        toggle.addEventListener('click', function (e) {
           e.preventDefault();
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
           this.parentElement.classList.toggle('open');
         });
       });
-      document.addEventListener('click', function(e) {
+
+      document.addEventListener('click', function (e) {
         toggles.forEach(toggle => {
           const parent = toggle.parentElement;
           if (!parent.contains(e.target)) {
+            toggle.setAttribute('aria-expanded', 'false');
             parent.classList.remove('open');
           }
         });
       });
     });
-
-    // Adjust margins for masonry images
-    window.addEventListener('load', function () {
-      if (window.innerWidth >= 768) {
-        const images = document.querySelectorAll('.masonry-grid img');
-        images.forEach(img => {
-          const height = img.offsetHeight;
-          const margin = height * 0.05;
-          img.style.marginLeft = `${margin}px`;
-          img.style.marginRight = `${margin}px`;
-        });
-      }
-    });
   </script>
 
 </body>
 </html>
+
