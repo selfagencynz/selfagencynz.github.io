@@ -255,6 +255,38 @@ body.page-showcase .profile-text .enter-button {
     grid-column: 1;
   }
 }
+  (function() {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      const amountToMove = currentSlide * track.clientWidth;
+      track.style.transform = `translateX(-${amountToMove}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateCarousel();
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+      }
+    });
+
+    // Resize handler in case viewport changes
+    window.addEventListener('resize', updateCarousel);
+  })();
+</script>
+
+
 
 
 /*-----------------------------------
