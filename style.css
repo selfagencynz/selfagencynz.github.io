@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1.5rem 1rem;
-  background-color: #fff;    /* white header */
+  background-color: #fff;    /* white header background */
   flex-wrap: wrap;
 }
 
@@ -49,6 +49,7 @@ body {
 
 .navbar .nav-links li {
   list-style: none;
+  position: relative;        /* needed for dropdown positioning */
 }
 
 .navbar .nav-links a {
@@ -62,6 +63,46 @@ body {
 
 .navbar .nav-links a:hover {
   text-decoration: underline;
+}
+
+/* Dropdown */
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;                 /* position below the parent <li> */
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1001;
+  min-width: 160px;
+}
+
+.navbar .dropdown-menu li {
+  white-space: nowrap;
+}
+
+.navbar .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar .dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show on hover (desktop) */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Show when .open class is added (mobile) */
+.navbar .dropdown.open .dropdown-menu {
+  display: block;
 }
 
 /*============================================================
@@ -204,8 +245,8 @@ body {
   padding: 0.75rem;
   border: 1px solid #444;
   border-radius: 4px;
-  background-color: #fff;    /* white inputs */
-  color: #000;               /* black input text */
+  background-color: #fff;
+  color: #000;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -232,20 +273,20 @@ body {
   Footer
 ============================================================*/
 .footer {
-  background-color: #000;    /* black footer */
-  color: #fff;               /* white text */
+  background-color: #000;    /* black footer background */
+  color: #fff;               /* white footer text */
   text-align: center;
   padding: 2rem 1rem;
 }
 
 .footer a {
-  color: #fff;               /* white link text */
+  color: #fff;               /* white footer links */
   text-decoration: none;
   font-weight: bold;
 }
 
 .footer a:hover {
-  color: #fff;               /* no change on hover */
+  color: #fff;
 }
 
 /*============================================================
@@ -291,4 +332,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
