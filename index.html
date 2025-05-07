@@ -10,60 +10,27 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
       font-family: 'Times New Roman', Times, serif;
+      background-color: #000;
+      color: #fff;
     }
 
     .video-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
       position: relative;
-      width: 100%;
-      height: 100%;
     }
 
-    .video-embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .video-embed iframe {
+    .video-wrapper iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    .logo-overlay {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 2;
-    }
-
-    .logo-overlay img {
-      height: 60px;
-      width: auto;
-    }
-
-    .overlay-content {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .below-video-content {
       text-align: center;
-      z-index: 2;
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-    }
-
-    .bio-text {
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      margin-top: 2rem;
       padding: 0 1rem;
-      max-width: 600px;
     }
 
     .enter-button {
@@ -88,31 +55,20 @@
 </head>
 <body>
 
+  <!-- Video Section -->
   <div class="video-wrapper">
-    
-    <!-- Vimeo Video Embed -->
-    <div class="video-embed">
-      <iframe 
-        src="https://player.vimeo.com/video/1082197586?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" 
-        allow="autoplay; fullscreen; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
+    <iframe 
+      src="https://player.vimeo.com/video/1082197586?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" 
+      allow="autoplay; fullscreen; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
 
-    <!-- Logo -->
-    <div class="logo-overlay">
-      <img src="logo.png" alt="SELFagency Logo" />
-    </div>
-
-    <!-- Text and Button -->
-    <div class="overlay-content">
-      <a href="talent.html" class="enter-button">Click to Enter</a>
-    </div>
-
+  <!-- Content Below Video -->
+  <div class="below-video-content">
+    <a href="talent.html" class="enter-button">Click to Enter</a>
   </div>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
-
 </body>
 </html>
-
