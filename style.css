@@ -42,17 +42,17 @@ body {
   display: block;
 }
 
-.navbar .nav-links {
+.nav-links {
   display: flex;
   gap: 2rem;
+  list-style: none;
 }
 
-.navbar .nav-links li {
-  list-style: none;
+.nav-links li {
   position: relative;
 }
 
-.navbar .nav-links a {
+.nav-links a {
   color: #000;
   text-transform: uppercase;
   font-size: 0.9rem;
@@ -61,12 +61,12 @@ body {
   transition: text-decoration 0.3s ease;
 }
 
-.navbar .nav-links a:hover {
+.nav-links a:hover {
   text-decoration: underline;
 }
 
 /* Dropdown */
-.navbar .dropdown-menu {
+.dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -74,34 +74,28 @@ body {
   background-color: #fff;
   list-style: none;
   padding: 0.5rem 0;
-  margin: 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   z-index: 1001;
   min-width: 160px;
 }
 
-.navbar .dropdown-menu li {
+.dropdown-menu li {
   white-space: nowrap;
 }
 
-.navbar .dropdown-menu a {
+.dropdown-menu a {
   display: block;
   padding: 0.5rem 1rem;
   color: #000;
   text-decoration: none;
 }
 
-.navbar .dropdown-menu a:hover {
+.dropdown-menu a:hover {
   background-color: #f0f0f0;
 }
 
-/* Show on hover (desktop) */
-.navbar .dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Show when .open class is added (mobile) */
-.navbar .dropdown.open .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown.open .dropdown-menu {
   display: block;
 }
 
@@ -132,11 +126,10 @@ body {
 ============================================================*/
 .talent-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Updated to 4 across */
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   max-width: 90vw;
   margin: 2rem auto;
-  justify-content: center;
 }
 
 .talent-card {
@@ -155,7 +148,7 @@ body {
 }
 
 .talent-card:hover .talent-img {
-  filter: none; /* Restore color on hover */
+  filter: none;
 }
 
 .overlay-text {
@@ -176,38 +169,7 @@ body {
 }
 
 /*============================================================
-  Profile + Gallery Layout (e.g. Ursula page)
-============================================================*/
-.profile-gallery {
-  display: grid;
-  grid-template-columns: minmax(200px, 1fr) 3fr;
-  gap: 2rem;
-  align-items: start;
-  max-width: 90vw;
-  margin: 2rem auto;
-}
-
-.profile-gallery .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.profile-gallery .gallery img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 0;
-  display: block;
-}
-
-.profile-text {
-  padding-top: 0.5rem;
-}
-
-
-/*============================================================
-  Generic Gallery
+  Gallery Styles (e.g. Ursula page)
 ============================================================*/
 .gallery {
   display: grid;
@@ -222,10 +184,38 @@ body {
   height: auto;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-======================================================
-  Masonry Grid
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/*============================================================
+  Profile + Gallery Layout
+============================================================*/
+.profile-gallery {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 3fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.profile-gallery .gallery {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.profile-text {
+  padding-top: 0.5rem;
+}
+
+/*============================================================
+  Masonry Grid (e.g. Aaron page)
 ============================================================*/
 .masonry-grid {
   column-count: 3;
@@ -258,7 +248,7 @@ body {
 }
 
 /*============================================================
-  Forms (Application & Contact)
+  Forms
 ============================================================*/
 .application-form,
 .contact-form,
