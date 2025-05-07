@@ -157,17 +157,19 @@ body.page-profile .profile-gallery {
   grid-template-columns: minmax(200px, 1fr) repeat(3, 1fr);
   gap: 2rem;
   padding: 2rem 1rem;
-  max-width: 1200px;     /* new: caps total width */
-  margin: 0 auto;        /* centers it */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* 2) Fix 3‑column grid with tighter min width */
+/* 2) 3‑column image grid */
 body.page-profile .profile-gallery .masonry-grid {
   grid-column: 2 / span 3;
   display: grid;
-  /* each image column is at least 200px, at most 1fr */
   grid-template-columns: repeat(3, minmax(200px, 1fr));
   gap: 1rem;
+  /* we'll override left/right margins via JS */
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Image styling unchanged */
@@ -178,17 +180,32 @@ body.page-profile .masonry-grid img {
   object-fit: cover;
 }
 
+/* “Digis” link: render as plain text with underline */
+body.page-profile .profile-text .enter-button {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* Responsive fallback */
 @media (max-width: 768px) {
   body.page-profile .profile-gallery {
     grid-template-columns: 1fr;
-    max-width: 90vw;     /* narrower on mobile */
+    max-width: 90vw;
   }
   body.page-profile .masonry-grid {
     grid-template-columns: 1fr;
     grid-column: 1;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
+
 
 /*-----------------------------------
   4. PROFILE DIGIS PAGES
