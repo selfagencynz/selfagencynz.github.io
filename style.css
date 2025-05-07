@@ -342,6 +342,9 @@ body.page-showcase .masonry-grid img {
   }
 }
 
+body.page-showcase .enter-button {
+  text-transform: none;
+}
 
 
 /*-----------------------------------
