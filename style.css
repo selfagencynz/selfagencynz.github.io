@@ -76,55 +76,7 @@ body.page-index .enter-button {
 /*-----------------------------------
   2. TALENT PAGE
 -----------------------------------*/
-body.page-talent {
-  background-color: #000;
-  color: #fff;
-}
-
-/* Navbar: white background, black text */
-body.page-talent .navbar {
-  background-color: #fff;
-  color: #000;
-}
-body.page-talent .navbar .nav-links a {
-  color: #000;
-}
-
-/* Dropdown menu remains dark if you like, or match navbar */
-body.page-talent .dropdown-menu {
-  background: #fff;
-}
-
-/* Talent Grid: 4 columns */
-body.page-talent .talent-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  padding: 2rem 1rem;
-}
-
-/* Talent Card: image container */
-body.page-talent .talent-card {
-  position: relative;       /* for overlay positioning */
-  overflow: hidden;         /* hide overflow during hover scale */
-}
-
-/* Images: grayscale → color */
-body.page-talent .talent-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-/* Scale up slightly and remove grayscale on hover */
-body.page-talent .talent-card:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.05);
-}
-
-/* Overlay caption */
+/* 1) Remove overlay background and show white text */
 body.page-talent .talent-card .overlay-text {
   position: absolute;
   bottom: 10px;
@@ -135,17 +87,62 @@ body.page-talent .talent-card .overlay-text {
   color: #fff;
   text-transform: uppercase;
   pointer-events: none;
-  background: rgba(0,0,0,0.6);
+  background: none; /* Removed the background */
   padding: 0.25rem 0.5rem;
-  border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-/* Fade in caption on hover */
+/* 2) Fade in caption with white text on hover */
 body.page-talent .talent-card:hover .overlay-text {
   opacity: 1;
 }
+
+/* 3) Ensure the talent card has a portrait aspect ratio */
+body.page-talent .talent-card {
+  aspect-ratio: 4 / 5;  /* 4:5 aspect ratio for portrait images */
+  overflow: hidden;      /* ensures no overflow beyond the card boundaries */
+  position: relative;    /* for absolute positioning of overlay */
+}
+
+/* 4) Images: grayscale → color, and scale up slightly */
+body.page-talent .talent-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures images fill the container and are cropped */
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* 5) Scale up the image slightly and remove grayscale on hover */
+body.page-talent .talent-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* 6) Talent Grid (4 columns) */
+body.page-talent .talent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+/* 7) Navbar and page layout (as before) */
+body.page-talent {
+  background-color: #000;
+  color: #fff;
+}
+
+body.page-talent .navbar {
+  background-color: #fff;
+  color: #000;
+}
+
+body.page-talent .navbar .nav-links a {
+  color: #000;
+}
+
 
 /*-----------------------------------
   3. PROFILE PAGES (adjusted)
