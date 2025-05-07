@@ -6,66 +6,69 @@
   <title>SELFagency</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .enter-button {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #000;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .enter-button:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="logo.png" alt="Logo" class="logo-img" />
-      </a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="talent.html">Talent</a></li>
-      <li><a href="cast.html">Cast</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Reach Us</a>
-        <ul class="dropdown-menu">
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="be_represented_by_us.html">Be represented by us</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Main Content with Video -->
-  <main class="main-content">
-    <video controls width="640" height="360">
-      <source src="your-video.mp4" type="video/mp4">
+  <div class="video-container">
+    <video autoplay muted playsinline loop>
+      <source src="your-video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>
-      <a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a>
-    </p>
-  </footer>
-
-  <!-- JS -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggles = document.querySelectorAll('.dropdown-toggle');
-      toggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          this.parentElement.classList.toggle('open');
-        });
-      });
-      document.addEventListener('click', function(e) {
-        toggles.forEach(toggle => {
-          const parent = toggle.parentElement;
-          if (!parent.contains(e.target)) {
-            parent.classList.remove('open');
-          }
-        });
-      });
-    });
-  </script>
+    <a href="talent.html" class="enter-button">Click to Enter</a>
+  </div>
 
 </body>
 </html>
-
