@@ -9,8 +9,8 @@
 
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-color: #fff;    /* white page background */
-  color: #000;               /* black default text */
+  background-color: #fff;
+  color: #000;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1.5rem 1rem;
-  background-color: #fff;    /* white header background */
+  background-color: #fff;
   flex-wrap: wrap;
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .logo-img {
-  height: 60px;             /* increased logo size */
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -49,11 +49,11 @@ body {
 
 .navbar .nav-links li {
   list-style: none;
-  position: relative;        /* needed for dropdown positioning */
+  position: relative;
 }
 
 .navbar .nav-links a {
-  color: #000;               /* black nav links */
+  color: #000;
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -69,7 +69,7 @@ body {
 .navbar .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;                 /* position below the parent <li> */
+  top: 100%;
   left: 0;
   background-color: #fff;
   list-style: none;
@@ -110,10 +110,18 @@ body {
 ============================================================*/
 .main-content {
   flex: 1;
-  padding: 4rem 1rem;
+  width: 100%;
   max-width: 90vw;
+  padding: 6rem 1rem 4rem; /* extra top padding for sticky nav */
   margin: 0 auto;
   text-align: center;
+}
+
+/* Optional: Ensure height to push footer down */
+.main-content:empty::before {
+  content: "";
+  display: block;
+  height: 200px;
 }
 
 .main-content h1 {
@@ -273,14 +281,15 @@ body {
   Footer
 ============================================================*/
 .footer {
-  background-color: #000;    /* black footer background */
-  color: #fff;               /* white footer text */
+  background-color: #000;
+  color: #fff;
   text-align: center;
   padding: 2rem 1rem;
+  margin-top: auto;
 }
 
 .footer a {
-  color: #fff;               /* white footer links */
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -322,7 +331,7 @@ body {
   }
 
   .main-content {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
   }
 }
 
