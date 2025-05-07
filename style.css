@@ -126,13 +126,14 @@ body {
 }
 
 
-/* Ursula Gallery – larger, 3‑column layout */
+/* Ursula Gallery – centered 3‑column layout, larger images, no rounding */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
-  gap: 1.5rem;                            /* slightly larger gaps */
-  width: 90vw;                            /* span 90% of the viewport width */
-  margin: 2rem auto;                      /* center and add vertical breathing room */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 90vw;          /* span most of viewport width */
+  margin: 2rem auto;        /* center horizontally and add vertical space */
+  justify-content: center;  /* ensure columns stay centered within the container */
 }
 
 .gallery img {
@@ -140,8 +141,9 @@ body {
   height: auto;
   object-fit: cover;
   display: block;
-  border-radius: 8px;                     /* optional rounding */
+  border-radius: 0;         /* remove any rounding */
 }
+
 
 /* Footer */
 .footer {
