@@ -126,23 +126,49 @@ body {
 }
 
 
-/* Ursula Gallery – centered 3‑column layout, larger images, no rounding */
-.gallery {
+/* Two‑column layout: text on left, 3‑col gallery on right */
+.profile-gallery {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 3fr;
+  gap: 2rem;
+  align-items: start;      /* top‑align text & gallery */
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+/* Ensure gallery still 3 columns within its grid cell */
+.profile-gallery .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 90vw;          /* span most of viewport width */
-  margin: 2rem auto;        /* center horizontally and add vertical space */
-  justify-content: center;  /* ensure columns stay centered within the container */
 }
 
-.gallery img {
+/* Remove any fixed width on gallery from previous rules */
+.profile-gallery .gallery,
+.profile-gallery .gallery img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: block;
-  border-radius: 0;         /* remove any rounding */
+  border-radius: 0;
 }
+
+/* Profile text styling (optional tweaks) */
+.profile-text {
+  padding-top: /* match any vertical offset you want, e.g. */ 0.5rem;
+}
+
+/* Mobile: stack into one column */
+@media (max-width: 600px) {
+  .profile-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
 
 
 /* Footer */
