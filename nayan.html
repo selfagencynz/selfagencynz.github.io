@@ -8,82 +8,50 @@
 </head>
 <body class="page-showcase">
 
-  <!-- Navigation -->
+  <!-- Nav (same as other pages) -->
   <nav class="navbar">
-    <!-- … your nav links here … -->
+    <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="Logo" class="logo-img" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="talent.html">Talent</a></li>
+      <li><a href="cast.html">Cast</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Reach Us</a>
+        <ul class="dropdown-menu">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="be_represented_by_us.html">Be represented by us</a></li>
+        </ul>
+      </li>
+    </ul>
   </nav>
 
+  <!-- Showcase Content -->
   <main class="main-content">
     <section class="profile-gallery">
 
-      <!-- Profile Text -->
       <div class="profile-text">
         <h1 class="accent">Nayan</h1>
         <p class="bio">He/Him</p>
         <p><a href="nayan.digis.html" class="enter-button">digis</a></p>
       </div>
 
-      <!-- Carousel Wrapper -->
-      <div class="carousel-wrapper">
-        <button class="carousel-button prev">&#10094;</button>
-
-        <div class="carousel-track-container">
-          <ul class="carousel-track">
-            <!-- Slide 1 -->
-            <li class="slide">
-              <img src="assets/images/talent/nayan/buddy_nayan1.jpg" alt="Nayan 1" />
-              <img src="assets/images/talent/nayan/art_nayan2.jpg" alt="Nayan 2" />
-            </li>
-            <!-- Slide 2 -->
-            <li class="slide">
-              <img src="assets/images/talent/nayan/mag_nayan1.jpeg" alt="Nayan 3" />
-              <img src="assets/images/talent/nayan/meg_nayan1.jpg" alt="Nayan 4" />
-            </li>
-            <!-- Add more slides as needed, grouping two images per slide -->
-          </ul>
-        </div>
-
-        <button class="carousel-button next">&#10095;</button>
+      <div class="masonry-grid">
+        <img src="assets/images/talent/nayan/buddy_nayan1.jpg" alt="Nayan 1" />
+        <img src="assets/images/talent/nayan/art_nayan2.jpg" alt="Nayan 2" />
+        <img src="assets/images/talent/nayan/mag_nayan1.jpeg" alt="Nayan 3" />
+        <img src="assets/images/talent/nayan/meg_nayan1.jpg" alt="Nayan 4" />
+        <!-- more images… -->
       </div>
+
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (same as other pages) -->
   <footer class="footer">
-    <!-- … your footer content here … -->
+    <p><a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a></p>
   </footer>
 
-  <!-- Carousel Script -->
-  <script>
-    (function() {
-      const track = document.querySelector('.carousel-track');
-      const slides = Array.from(track.children);
-      const prevButton = document.querySelector('.carousel-button.prev');
-      const nextButton = document.querySelector('.carousel-button.next');
-      let currentSlide = 0;
-
-      function updateCarousel() {
-        const slideWidth = track.clientWidth;
-        track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-      }
-
-      nextButton.addEventListener('click', () => {
-        if (currentSlide < slides.length - 1) {
-          currentSlide++;
-          updateCarousel();
-        }
-      });
-
-      prevButton.addEventListener('click', () => {
-        if (currentSlide > 0) {
-          currentSlide--;
-          updateCarousel();
-        }
-      });
-
-      window.addEventListener('resize', updateCarousel);
-    })();
-  </script>
 </body>
 </html>
-
