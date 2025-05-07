@@ -76,33 +76,77 @@ body.page-index .enter-button {
 /*-----------------------------------
   2. TALENT PAGE
 -----------------------------------*/
-body.page-talent { background-color: #000; color: #fff; }
-body.page-talent .navbar { background-color: #000; color: #fff; }
-body.page-talent .dropdown-menu { background: #111; }
+body.page-talent {
+  background-color: #000;
+  color: #fff;
+}
 
-/* Talent Grid */
-.talent-grid {
+/* Navbar: white background, black text */
+body.page-talent .navbar {
+  background-color: #fff;
+  color: #000;
+}
+body.page-talent .navbar .nav-links a {
+  color: #000;
+}
+
+/* Dropdown menu remains dark if you like, or match navbar */
+body.page-talent .dropdown-menu {
+  background: #fff;
+}
+
+/* Talent Grid: 4 columns */
+body.page-talent .talent-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 2rem 1rem;
 }
-.talent-card {
-  background: #111;
-  border: 1px solid #222;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
+
+/* Talent Card: image container */
+body.page-talent .talent-card {
+  position: relative;       /* for overlay positioning */
+  overflow: hidden;         /* hide overflow during hover scale */
 }
-.talent-card:hover { transform: scale(1.02); }
-.talent-card img { width: 100%; height: auto; display: block; margin-bottom: 1rem; }
-.overlay-text {
+
+/* Images: grayscale → color */
+body.page-talent .talent-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Scale up slightly and remove grayscale on hover */
+body.page-talent .talent-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Overlay caption */
+body.page-talent .talent-card .overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
   color: #fff;
-  letter-spacing: 1px;
   text-transform: uppercase;
+  pointer-events: none;
+  background: rgba(0,0,0,0.6);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
+
+/* Fade in caption on hover */
+body.page-talent .talent-card:hover .overlay-text {
+  opacity: 1;
+}
+
 
 /*-----------------------------------
   3. PROFILE PAGES
