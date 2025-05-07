@@ -62,6 +62,30 @@ h1, h2, h3, h4, h5, h6,
   white-space: nowrap;
   color: inherit;
 }
+/* Apply Flexbox Layout to the Body */
+html, body {
+  height: 100%;  /* Full height to allow content to stretch */
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Ensure Flex Layout for all pages */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure Footer Stays at the Bottom for all pages */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+  margin-top: auto;  /* This ensures footer stays at the bottom */
+}
 
 /*-----------------------------------
   1. INDEX PAGE
