@@ -371,4 +371,19 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/*============================================================
+  Ursula gallery
+============================================================*/
+.ursula-gallery img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center center;
+  cursor: pointer;
+}
+
+.ursula-gallery img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  filter: none !important; /* override grayscale if inherited */
+}
 
