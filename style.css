@@ -343,13 +343,26 @@ body.page-showcase .enter-button {
   text-transform: none;
 }
 
-
 /*-----------------------------------
   4. PROFILE DIGIS PAGES
 -----------------------------------*/
-body.page-profile-digis { background: #fff; color: #000; }
-body.page-profile-digis .navbar { display: none; }
-body.page-profile-digis .enter-button { background: rgba(0,0,0,0.8); color: #fff; }
+
+body.page-profile-digis {
+  background: #fff;
+  color: #000;
+}
+
+/* Show the navbar again */
+body.page-profile-digis .navbar {
+  display: block; /* Change from 'none' to 'block' to make it visible */
+}
+
+/* Button style */
+body.page-profile-digis .enter-button {
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
 
 /*-----------------------------------
   5. CAST PAGE
