@@ -148,33 +148,33 @@ body.page-talent .talent-card:hover .overlay-text {
 }
 
 /*-----------------------------------
-  3. PROFILE PAGES
+  3. PROFILE PAGES (adjusted)
 -----------------------------------*/
 
-/* 1) Constrain overall gallery width */
+/* 1) Two‑column layout: fix text at 200px, let images fill the rest */
 body.page-profile .profile-gallery {
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) 1fr; /* text + image area */
+  grid-template-columns: 200px 1fr;  /* text = 200px wide, images = the rest */
   gap: 2rem;
   padding: 2rem 1rem;
-  max-width: 1200px;
+  width: 100%;       /* full browser width */
   margin: 0 auto;
 }
 
-/* Profile text in column 1 */
-body.page-profile .profile-gallery .profile-text {
-  grid-column: 1;
+/* Remove any max-width limit */
+body.page-profile .profile-gallery {
+  max-width: none;
 }
 
-/* 2) Masonry via multi‑column in columns 2–4 */
+/* 2) Masonry via multi‑column on the image area */
 body.page-profile .profile-gallery .masonry-grid {
-  grid-column: 2;         /* occupies the second grid column */
+  grid-column: 2;    /* span only the image column */
   column-count: 3;
   column-gap: 1rem;
-  margin: 0;              /* clear any JS margins */
+  margin: 0;         /* reset any JS margins */
 }
 
-/* Make each image a discrete column item */
+/* Each image flows into its column at full width */
 body.page-profile .masonry-grid img {
   width: 100%;
   display: inline-block;
@@ -183,7 +183,7 @@ body.page-profile .masonry-grid img {
   object-fit: cover;
 }
 
-/* “Digis” link as plain underlined text */
+/* “Digis” link as underlined text */
 body.page-profile .profile-text .enter-button {
   background: none;
   color: inherit;
@@ -195,11 +195,10 @@ body.page-profile .profile-text .enter-button {
   cursor: pointer;
 }
 
-/* Responsive fallback: single column on narrow viewports */
+/* Responsive collapse */
 @media (max-width: 768px) {
   body.page-profile .profile-gallery {
     grid-template-columns: 1fr;
-    max-width: 90vw;
   }
   body.page-profile .profile-gallery .masonry-grid {
     column-count: 1;
