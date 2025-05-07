@@ -205,81 +205,79 @@ body.page-profile .profile-text .enter-button {
     grid-column: 1;
   }
 }
-
 /*-----------------------------------
-  Profile Showcase (linear image list)
+  PROFILE SHOWCASE (STACKED VIEW)
 -----------------------------------*/
 
-/* 1) Two‑column layout: narrow text, wide images */
+/* Allow normal scrolling so header/footer are visible */
+html, body {
+  overflow: auto !important;
+}
+
+/* One-column layout: text above image list */
 body.page-showcase .profile-gallery {
   display: grid;
-  /* text column: min 150px, max 250px; image column: take the rest */
-  grid-template-columns: minmax(150px, 250px) 1fr;
-  gap: 1rem;               /* cut the gap in half */
+  grid-template-columns: 1fr;  /* force single column */
+  gap: 2rem;                   /* spacing between text & carousel */
   padding: 2rem 1rem;
   width: 100%;
   margin: 0 auto;
+  max-width: 1200px;           /* cap width */
 }
 
-/* 2) Vertical list */
-body.page-showcase .profile-gallery .masonry-grid {
-  grid-column: 2;    /* occupy the full image column */
-  display: block;
-  margin: 0;
+/* Centered profile text */
+body.page-showcase .profile-text {
+  text-align: center;
+}
+
+body.page-showcase .profile-text h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+body.page-showcase .profile-text p {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+
+body.page-showcase .profile-text .enter-button {
+  background: none;
+  text-decoration: underline;
+  font-weight: normal;
+  cursor: pointer;
   padding: 0;
 }
 
-/* 3) Stack images full‑width with gutter */
+/* Vertical image list or carousel wrapper */
+body.page-showcase .masonry-grid,
+body.page-showcase .carousel-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Stack images with spacing */
 body.page-showcase .masonry-grid img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 1.5rem;  /* slightly less vertical space */
+  margin-bottom: 1.5rem;
   object-fit: cover;
 }
 
-/* Carousel overrides (if still in use) */
-.carousel-wrapper { margin: 0; }
-.slide img { width: 50%; }
-
-/* 4) “Digis” link styling unchanged… */
-
-/* Responsive collapse on narrow viewports */
-@media (max-width: 768px) {
-  body.page-showcase .profile-gallery {
-    grid-template-columns: 1fr;
-  }
-  /*-----------------------------------
-  Profile Showcase: Text Above Carousel
------------------------------------*/
-body.page-showcase .profile-gallery {
-  /* single‑column stack: text first, then carousel */
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding: 2rem 1rem;
-  width: 100%;
-  margin: 0 auto;
-}
-}
-
-/*-----------------------------------
-  Profile Showcase Carousel
------------------------------------*/
-
-/* wrapper hides overflow */
+/* Carousel-specific layout */
 .carousel-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
 
-/* track container hides overflow */
 .carousel-track-container {
   overflow: hidden;
 }
 
-/* track = flex row of slides */
 .carousel-track {
   display: flex;
   transition: transform 0.4s ease;
@@ -288,14 +286,12 @@ body.page-showcase .profile-gallery {
   margin: 0;
 }
 
-/* each slide is 100% of wrapper, holding two images */
 .slide {
   flex: 0 0 100%;
   display: flex;
   gap: 1rem;
 }
 
-/* images each take half the slide */
 .slide img {
   width: 50%;
   height: auto;
@@ -303,7 +299,7 @@ body.page-showcase .profile-gallery {
   display: block;
 }
 
-/* nav buttons */
+/* Carousel buttons */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -323,15 +319,29 @@ body.page-showcase .profile-gallery {
   background: rgba(255,255,255,1);
 }
 
-
 /*-----------------------------------
-  PROFILE SHOWCASE: force single‑column
+  Responsive tweaks
 -----------------------------------*/
-body.page-showcase .profile-gallery {
-  display: grid;
-  grid-template-columns: 1fr;  /* one column only */
-  gap: 2rem;                   /* spacing between text & carousel */
+@media (max-width: 768px) {
+  body.page-showcase .profile-gallery {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
+
+  body.page-showcase .profile-text p {
+    display: block;
+    margin: 0.25rem 0;
+  }
+
+  .slide {
+    flex-direction: column;
+  }
+
+  .slide img {
+    width: 100%;
+  }
 }
+
 
 
 /*-----------------------------------
