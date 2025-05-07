@@ -40,6 +40,7 @@
         professional images to submit—phone images are okay. Natural light and
         form-fitting clothing work best. After submission, an agent will be in
         touch if we think we’d be a good fit. Please apply only if you are 18 or above.
+
       </p>
     </div>
 
@@ -71,7 +72,13 @@
       <label for="instagram">Instagram Handle</label>
       <input type="text" id="instagram" name="instagram">
 
-      <label for="images">Upload Images (up to 5)</label>
+      <label for="images">Upload Image (front face)</label>
+      <input type="file" id="images" name="images[]" accept="image/*" multiple>
+      
+      <label for="images">Upload Images (side profile)</label>
+      <input type="file" id="images" name="images[]" accept="image/*" multiple>
+
+      <label for="images">Upload Images (full body)</label>
       <input type="file" id="images" name="images[]" accept="image/*" multiple>
 
       <label for="message">Tell us about yourself</label>
