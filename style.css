@@ -356,7 +356,6 @@ body.page-profile-digis {
 body.page-profile-digis .navbar {
   background: #fff;  /* White background like the cast page */
   padding: 1rem 2rem; /* Adjust padding for consistent spacing */
-  border-bottom: 1px solid #e0e0e0; /* Optional: add subtle border at the bottom */
 }
 
 /* Navbar links: similar to the cast page style */
