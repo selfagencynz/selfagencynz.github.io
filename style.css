@@ -1,7 +1,9 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
 
-/* Default body styles (applies to all pages) */
+/*-----------------------------------
+  0. GLOBAL STYLES
+-----------------------------------*/
 html, body {
   margin: 0;
   padding: 0;
@@ -10,19 +12,13 @@ html, body {
   color: #000;
 }
 
-/* Talent page override */
-body#talent-page {
-  background-color: #000;
-  color: #fff;
-}
-
 /* Typography */
 h1, h2, h3, h4, h5, h6,
 .accent {
   font-family: 'Playfair Display', serif;
 }
 
-/* Navbar */
+/* Navbar Defaults */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -31,17 +27,7 @@ h1, h2, h3, h4, h5, h6,
   background-color: #fff;
   color: #000;
 }
-
-body#talent-page .navbar {
-  background-color: #000;
-  color: #fff;
-}
-
-.logo-img {
-  height: 40px;
-  width: auto;
-}
-
+.navbar .logo-img { height: 40px; }
 .nav-links {
   list-style: none;
   display: flex;
@@ -49,22 +35,15 @@ body#talent-page .navbar {
   margin: 0;
   padding: 0;
 }
-
 .nav-links a {
   text-decoration: none;
   font-weight: 500;
   color: inherit;
 }
+.nav-links a:hover { text-decoration: underline; }
 
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Dropdown Menu */
-.dropdown {
-  position: relative;
-}
-
+/* Dropdown */
+.dropdown { position: relative; }
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -76,15 +55,7 @@ body#talent-page .navbar {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   z-index: 1000;
 }
-
-body#talent-page .dropdown-menu {
-  background: #111;
-}
-
-.dropdown.open .dropdown-menu {
-  display: block;
-}
-
+.dropdown.open .dropdown-menu { display: block; }
 .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1.5rem;
@@ -92,7 +63,83 @@ body#talent-page .dropdown-menu {
   color: inherit;
 }
 
-/* Button Style */
+/*-----------------------------------
+  1. INDEX PAGE
+-----------------------------------*/
+body.page-index .navbar { display: none; }
+body.page-index { background: #000; color: #fff; }
+body.page-index .enter-button {
+  background-color: rgba(255,255,255,0.8);
+  color: #000;
+}
+
+/*-----------------------------------
+  2. TALENT PAGE
+-----------------------------------*/
+body.page-talent { background-color: #000; color: #fff; }
+body.page-talent .navbar { background-color: #000; color: #fff; }
+body.page-talent .dropdown-menu { background: #111; }
+
+/* Talent Grid */
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+.talent-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.talent-card:hover { transform: scale(1.02); }
+.talent-card img { width: 100%; height: auto; display: block; margin-bottom: 1rem; }
+.overlay-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/*-----------------------------------
+  3. PROFILE PAGES
+-----------------------------------*/
+body.page-profile { background: #fff; color: #000; }
+body.page-profile .navbar { background: #fff; color: #000; }
+.profile-gallery .profile-text h1 { font-size: 2.5rem; }
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+.masonry-grid img { width: 100%; height: auto; display: block; }
+
+/*-----------------------------------
+  4. PROFILE DIGIS PAGES
+-----------------------------------*/
+body.page-profile-digis { background: #fff; color: #000; }
+body.page-profile-digis .navbar { display: none; }
+body.page-profile-digis .enter-button { background: rgba(0,0,0,0.8); color: #fff; }
+
+/*-----------------------------------
+  5. CAST PAGE
+-----------------------------------*/
+body.page-cast { background: #fff; color: #000; }
+body.page-cast .navbar { background: #fff; }
+.casting-form { max-width: 600px; margin: 2rem auto; padding: 1rem; background: #f9f9f9; border-radius: 8px; }
+.casting-form label { font-family: 'Playfair Display', serif; color: #333; }
+
+/*-----------------------------------
+  6. BE REPRESENTED PAGE
+-----------------------------------*/
+body.page-be-represented { background: #fff; color: #000; }
+.contact-form { max-width: 600px; margin: 2rem auto; padding: 1rem; background: #fff; border: 1px solid #ccc; border-radius: 4px; }
+
+/* Buttons Default */
 .enter-button {
   background-color: rgba(255, 255, 255, 0.85);
   color: #000;
@@ -106,51 +153,9 @@ body#talent-page .dropdown-menu {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
 .enter-button:hover {
   background-color: #000;
   color: #fff;
-}
-
-/* Talent Page Grid */
-.talent-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 2rem 1rem;
-}
-
-.talent-card {
-  background: #111;
-  border: 1px solid #222;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.talent-card:hover {
-  transform: scale(1.02);
-}
-
-.talent-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.talent-card h3 {
-  margin: 0.5rem 0 0;
-  font-size: 1.1rem;
-}
-
-/* Overlay text for talent names */
-.overlay-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  color: #fff;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 /* Footer */
@@ -160,50 +165,23 @@ footer.footer {
   font-size: 0.9rem;
   background-color: #000;
 }
-
 footer.footer a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
 }
-
-footer.footer a:hover {
-  text-decoration: underline;
-}
+footer.footer a:hover { text-decoration: underline; }
 
 /* Utilities */
-.text-center {
-  text-align: center;
-}
-
-.max-width {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+.text-center { text-align: center; }
+.max-width { max-width: 1200px; margin: 0 auto; }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .talent-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .profile-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  object-fit: cover;
+  .talent-grid, .masonry-grid { grid-template-columns: 1fr; }
+  .nav-links { flex-direction: column; gap: 1rem; }
+  .navbar { flex-direction: column; align-items: flex-start; }
 }
-}
+
 
