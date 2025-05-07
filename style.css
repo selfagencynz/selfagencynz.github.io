@@ -324,6 +324,14 @@ body.page-showcase .profile-gallery {
 }
 
 
+/*-----------------------------------
+  PROFILE SHOWCASE: force single‑column
+-----------------------------------*/
+body.page-showcase .profile-gallery {
+  display: grid;
+  grid-template-columns: 1fr;  /* one column only */
+  gap: 2rem;                   /* spacing between text & carousel */
+}
 
 
 /*-----------------------------------
