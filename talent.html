@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Talent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body id="talent-page">
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
@@ -33,11 +33,10 @@
 
   <!-- Main Content -->
   <main class="main-content max-width">
-    <h1 class="text-center accent">Our Talent</h1>
-
+    <h1 class="text-center accent">Talent</h1>
     <div class="talent-grid">
 
-      <!-- Repeat for each talent -->
+      <!-- Talent Cards -->
       <a href="aaron.html" class="talent-card">
         <img src="aaron.jpeg" alt="Portrait of Aaron, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">AARON</div>
@@ -79,7 +78,7 @@
       </a>
 
       <a href="sam.html" class="talent-card">
-        <img src="sam.jpg" alt="Portrait of Sam, agency talent" class="talent-img" loading="lazy">
+        <img src="XXXX" alt="Portrait of Sam, agency talent" class="talent-img" loading="lazy">
         <div class="overlay-text">SAM</div>
       </a>
 
@@ -88,17 +87,15 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>
-      <a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a>
-    </p>
+    <p><a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a></p>
   </footer>
 
-  <!-- Dropdown Toggle Script -->
+  <!-- Dropdown toggle script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const toggles = document.querySelectorAll('.dropdown-toggle');
       toggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
+        toggle.addEventListener('click', function (e) {
           e.preventDefault();
           const expanded = this.getAttribute('aria-expanded') === 'true';
           this.setAttribute('aria-expanded', !expanded);
@@ -106,7 +103,7 @@
         });
       });
 
-      document.addEventListener('click', function(e) {
+      document.addEventListener('click', function (e) {
         toggles.forEach(toggle => {
           const parent = toggle.parentElement;
           if (!parent.contains(e.target)) {
@@ -120,3 +117,4 @@
 
 </body>
 </html>
+
