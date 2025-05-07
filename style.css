@@ -223,13 +223,38 @@ body {
   object-fit: cover;
   display: block;
 }
-------ADDED--------
-.gallery img {
-  display: block;
+
+======================================================
+  Masonry Grid
+============================================================*/
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1em;
+  padding: 1em;
+}
+
+.masonry-grid img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: margin 0.3s ease;
+  margin-bottom: 1em;
+  display: block;
+  transition: filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.masonry-grid img:hover {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonry-grid {
+    column-count: 1;
+  }
 }
 
 /*============================================================
