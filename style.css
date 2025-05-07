@@ -435,20 +435,21 @@ body.page-cast .navbar .nav-links a:hover {
   color: #f00; /* Red hover color */
 }
 
-/* Add some space for better layout */
+/* Main content area: text on the left, form on the right */
 body.page-cast .content {
+  display: flex;
+  justify-content: space-between; /* Align content side by side */
+  align-items: flex-start;
+  gap: 2rem; /* Space between text and form */
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between; /* Align content (text + form) side by side */
-  gap: 2rem; /* Space between text and form */
 }
 
-/* Text section */
+/* Text section: left-aligned */
 body.page-cast .content .text-section {
   flex: 1; /* Take up remaining space */
-  max-width: 600px; /* Limit width */
+  max-width: 600px; /* Limit the width of the text section */
 }
 
 body.page-cast .content .text-section h1,
@@ -456,9 +457,10 @@ body.page-cast .content .text-section p {
   font-family: 'Playfair Display', serif; /* Serif for text */
 }
 
-/* Casting Form: Positioned to the right */
+/* Casting Form: Right-aligned, positioned beside text */
 .casting-form {
-  max-width: 600px;  /* Increase max width for larger form */
+  max-width: 600px;  /* Max width for the form */
+  width: 100%;  /* Make form take the full width available */
   padding: 2rem;
   background: #f9f9f9;  /* Light background for form */
   border-radius: 10px; /* Rounded corners */
@@ -496,9 +498,9 @@ body.page-cast .content .text-section p {
   outline: none; /* Remove the default focus outline */
 }
 
-/* Button styling */
+/* Submit button */
 .casting-form button {
-  background: #f00; /* Red background for button */
+  background: #000; /* Black background for button */
   color: #fff;      /* White text color */
   padding: 1rem 2rem;
   font-size: 1.2rem;
@@ -511,7 +513,7 @@ body.page-cast .content .text-section p {
 }
 
 .casting-form button:hover {
-  background: #c00; /* Darker red on hover */
+  background: #333; /* Darker black on hover */
 }
 
 /* Responsiveness: Mobile-friendly */
@@ -528,8 +530,10 @@ body.page-cast .content .text-section p {
     text-align: center;
   }
 
+  /* Stacking content vertically on smaller screens */
   .content {
-    flex-direction: column; /* Stack content vertically on smaller screens */
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .casting-form {
@@ -537,7 +541,6 @@ body.page-cast .content .text-section p {
     margin-top: 2rem; /* Add some space above the form */
   }
 }
-
 
 
 /*-----------------------------------
