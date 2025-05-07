@@ -16,9 +16,10 @@
     }
 
     .video-wrapper {
+      position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      position: relative;
+      overflow: hidden;
     }
 
     .video-wrapper iframe {
@@ -27,10 +28,13 @@
       border: none;
     }
 
-    .below-video-content {
+    .enter-overlay {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
       text-align: center;
-      margin-top: 2rem;
-      padding: 0 1rem;
     }
 
     .enter-button {
@@ -62,13 +66,14 @@
       allow="autoplay; fullscreen; picture-in-picture" 
       allowfullscreen>
     </iframe>
-  </div>
 
-  <!-- Content Below Video -->
-  <div class="below-video-content">
-    <a href="talent.html" class="enter-button">Click to Enter</a>
+    <!-- Button Overlay -->
+    <div class="enter-overlay">
+      <a href="talent.html" class="enter-button">Click to Enter</a>
+    </div>
   </div>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>
+
