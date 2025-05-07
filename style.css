@@ -395,13 +395,20 @@ body.page-profile-digis .enter-button {
 
 
 /*-----------------------------------
-  5. CAST PAGE (Updated to match selfagency.co.nz/cast)
+  5. CAST PAGE (Updated with Footer & Layout Adjustments)
 -----------------------------------*/
 
 body.page-cast {
   background: #fff;   /* White background */
   color: #000;         /* Default text color black */
   font-family: 'Roboto', sans-serif; /* Modern sans-serif for body text */
+  display: flex;       /* Flexbox layout for the page */
+  flex-direction: column; /* Stack content vertically */
+  height: 100vh;       /* Full viewport height */
+}
+
+main {
+  flex: 1; /* Allow main content to take up remaining space */
 }
 
 /* Navbar: Clean and minimal */
@@ -516,6 +523,17 @@ body.page-cast .content .text-section p {
   background: #333; /* Darker black on hover */
 }
 
+/* Footer always at the bottom */
+footer {
+  background-color: #222; /* Dark background */
+  color: #fff;  /* White text */
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+  margin-top: auto;  /* Push footer to the bottom of the page */
+}
+
 /* Responsiveness: Mobile-friendly */
 @media (max-width: 768px) {
   body.page-cast .navbar {
@@ -541,4 +559,3 @@ body.page-cast .content .text-section p {
     margin-top: 2rem; /* Add some space above the form */
   }
 }
-
