@@ -79,7 +79,19 @@
         });
       });
     });
-  </script>
+  window.addEventListener('load', function() {
+    if (window.innerWidth >= 768) {
+      const firstImg = document.querySelector('body.page-profile .masonry-grid img');
+      const grid = document.querySelector('body.page-profile .masonry-grid');
+      if (firstImg && grid) {
+        const h = firstImg.offsetHeight;
+        const dynamicMargin = h * 0.05; // 5% of image height
+        grid.style.marginLeft = `${dynamicMargin}px`;
+        grid.style.marginRight = `${dynamicMargin}px`;
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
