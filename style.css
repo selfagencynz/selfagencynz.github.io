@@ -255,36 +255,65 @@ body.page-showcase .profile-text .enter-button {
     grid-column: 1;
   }
 }
-  (function() {
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    let currentSlide = 0;
+/*-----------------------------------
+  Profile Showcase Carousel
+-----------------------------------*/
 
-    function updateCarousel() {
-      const amountToMove = currentSlide * track.clientWidth;
-      track.style.transform = `translateX(-${amountToMove}px)`;
-    }
+/* wrapper hides overflow */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
 
-    nextButton.addEventListener('click', () => {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateCarousel();
-      }
-    });
+/* track container hides overflow */
+.carousel-track-container {
+  overflow: hidden;
+}
 
-    prevButton.addEventListener('click', () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateCarousel();
-      }
-    });
+/* track = flex row of slides */
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    // Resize handler in case viewport changes
-    window.addEventListener('resize', updateCarousel);
-  })();
-</script>
+/* each slide is 100% of wrapper, holding two images */
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+/* images each take half the slide */
+.slide img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* nav buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-button.prev { left: 0.5rem; }
+.carousel-button.next { right: 0.5rem; }
+
+.carousel-button:hover {
+  background: rgba(255,255,255,1);
+}
 
 
 
