@@ -1,11 +1,5 @@
-/*============================================================
-  Reset and Base Styles
-============================================================*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
 
 html, body {
   margin: 0;
@@ -15,409 +9,85 @@ html, body {
   color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Headings and accent typography */
+h1, h2, h3, h4, h5, h6,
+.accent {
   font-family: 'Playfair Display', serif;
 }
-/*============================================================
-  Navigation Bar (Header)
-============================================================*/
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem 1rem;
-  background-color: #fff;
-  flex-wrap: wrap;
 
-}
-.navbar .logo {
-  margin-right: auto;
-}
-
-.logo-img {
-  height: 60px;
-  width: auto;
-  display: block;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links a {
+/* General buttons */
+.enter-button {
+  background-color: rgba(255, 255, 255, 0.85);
   color: #000;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: text-decoration 0.3s ease;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Dropdown */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  list-style: none;
-  padding: 0.5rem 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  z-index: 1001;
-  min-width: 160px;
-}
-
-.dropdown-menu li {
-  white-space: nowrap;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #000;
-  text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown.open .dropdown-menu {
-  display: block;
-}
-
-/*============================================================
-  Main Content
-============================================================*/
-.main-content {
-  flex: 1;
-  padding: 7rem 1rem 4rem; /* increased top padding to offset fixed nav */
-  max-width: 90vw;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.main-content h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-
-.main-content p {
-  margin-bottom: 2rem;
-}
-
-.main-content {
-  flex: 1;
-}
-
-/*============================================================
-  Talent Page Grid
-============================================================*/
-.talent-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  max-width: 90vw;
-  margin: 2rem auto;
-}
-
-.talent-card {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.talent-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  filter: grayscale(100%);
-  display: block;
-  transition: filter 0.3s ease;
-}
-
-.talent-card:hover .talent-img {
-  filter: none;
-}
-
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 1rem;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.talent-card:hover .overlay-text {
-  opacity: 1;
-}
-
-/*============================================================
-  Gallery Styles (e.g. Ursula page)
-============================================================*/
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 90vw;
-  margin: 2rem auto;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-
-/*============================================================
-  Profile + Gallery Layout
-============================================================*/
-.profile-gallery {
-  display: grid;
-  grid-template-columns: minmax(200px, 1fr) 3fr;
-  gap: 2rem;
-  align-items: start;
-  max-width: 90vw;
-  margin: 2rem auto;
-}
-
-.profile-gallery .gallery {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.profile-text {
-  padding-top: 0.5rem;
-}
-
-/*============================================================
-  Masonry Grid (e.g. Aaron page)
-============================================================*/
-.masonry-grid {
-  column-count: 3;
-  column-gap: 1em;
-  padding: 1em;
-}
-
-.masonry-grid img {
-  width: 100%;
-  margin-bottom: 1em;
-  display: block;
-  transition: filter 0.3s ease;
-
-}
-
-@media (max-width: 1024px) {
-  .masonry-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .masonry-grid {
-    column-count: 1;
-  }
-}
-
-/*============================================================
-  Forms
-============================================================*/
-.application-form,
-.contact-form,
-.casting-form {
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.application-form label,
-.contact-form label,
-.casting-form label {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.application-form input,
-.application-form textarea,
-.contact-form input,
-.contact-form textarea,
-.casting-form input,
-.casting-form select {
-  padding: 0.75rem;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #000;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.application-form button,
-.contact-form button,
-.casting-form button {
-  padding: 0.75rem;
-  background-color: #ff9800;
-  color: #000;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.application-form button:hover,
-.contact-form button:hover,
-.casting-form button:hover {
-  background-color: #e68900;
-}
-
-/*============================================================
-  Footer
-============================================================*/
-.footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.footer a {
-  color: #fff;
   text-decoration: none;
   font-weight: bold;
-}
-
-.footer a:hover {
-  color: #fff;
-}
-
-/*============================================================
-  Responsive Breakpoints
-============================================================*/
-@media (max-width: 1024px) {
-  .talent-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .talent-grid,
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .profile-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-text {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-  .main-content {
-    padding: 2rem 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .talent-grid,
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-}
-/*============================================================
-  Ursula gallery
-============================================================*/
-.ursula-gallery img {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  transform-origin: center center;
-  cursor: pointer;
-}
-
-.ursula-gallery img:hover {
-  transform: scale(1.2);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-  z-index: 5;
-  filter: none !important; /* override grayscale if inherited */
-}
-
-.homepage-overlay {
-  position: absolute;
-  bottom: 10%;
-  width: 100%;
-  text-align: center;
-  color: white;
-}
-
-.bio-text {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.enter-button {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  background-color: white;
-  color: black;
-  border: none;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .enter-button:hover {
-  background-color: #e0e0e0;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Footer */
+footer.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background-color: #000;
+}
+
+footer.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+footer.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Talent Page Grid */
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.talent-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 1rem;
+  text-align: center;
+}
+
+.talent-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.talent-card h3 {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+}
+
+/* Optional shared utilities */
+.text-center {
+  text-align: center;
+}
+
+.max-width {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
