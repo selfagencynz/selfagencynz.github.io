@@ -3,32 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nayan </title>
+  <title>Nayan Showcase</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="page-showcase">
 
-  <nav class="navbar">…</nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <!-- … your nav links here … -->
+  </nav>
 
   <main class="main-content">
     <section class="profile-gallery">
+
+      <!-- Profile Text -->
       <div class="profile-text">
         <h1 class="accent">Nayan</h1>
         <p class="bio">He/Him</p>
         <p><a href="nayan.digis.html" class="enter-button">digis</a></p>
       </div>
 
-      <div class="masonry-grid">
-        <img src="assets/images/talent/nayan/buddy_nayan1.jpg" alt="Nayan 1" />
-        <img src="assets/images/talent/nayan/art_nayan2.jpg.jpg" alt="Nayan 2" />
-        <img src="assets/images/talent/nayan/mag_nayan1.jpeg" alt="Nayan 3" />
-         <img src="assets/images/talent/nayan/meg_nayan1.jpg" alt="Nayan 4" />
-        <!-- more images… -->
+      <!-- Carousel Wrapper -->
+      <div class="carousel-wrapper">
+        <button class="carousel-button prev">&#10094;</button>
+
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <!-- Slide 1 -->
+            <li class="slide">
+              <img src="assets/images/talent/nayan/buddy_nayan1.jpg" alt="Nayan 1" />
+              <img src="assets/images/talent/nayan/art_nayan2.jpg" alt="Nayan 2" />
+            </li>
+            <!-- Slide 2 -->
+            <li class="slide">
+              <img src="assets/images/talent/nayan/mag_nayan1.jpeg" alt="Nayan 3" />
+              <img src="assets/images/talent/nayan/meg_nayan1.jpg" alt="Nayan 4" />
+            </li>
+            <!-- Add more slides as needed, grouping two images per slide -->
+          </ul>
+        </div>
+
+        <button class="carousel-button next">&#10095;</button>
       </div>
     </section>
   </main>
 
-  <footer class="footer">…</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- … your footer content here … -->
+  </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    (function() {
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const prevButton = document.querySelector('.carousel-button.prev');
+      const nextButton = document.querySelector('.carousel-button.next');
+      let currentSlide = 0;
+
+      function updateCarousel() {
+        const slideWidth = track.clientWidth;
+        track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      }
+
+      nextButton.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          updateCarousel();
+        }
+      });
+
+      prevButton.addEventListener('click', () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateCarousel();
+        }
+      });
+
+      window.addEventListener('resize', updateCarousel);
+    })();
+  </script>
 </body>
 </html>
 
