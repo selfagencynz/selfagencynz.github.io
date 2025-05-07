@@ -434,11 +434,11 @@ body.page-profile-digis .enter-button {
 
 body.page-cast {
   background: #fff;   /* White background */
-  color: #000;         /* Default text color black */
+  color: #000;       /* Default text color black */
   font-family: 'Roboto', sans-serif; /* Modern sans-serif for body text */
-  display: flex;       /* Flexbox layout for the page */
-  flex-direction: column; /* Stack content vertically */
-  height: 100vh;       /* Full viewport height */
+  display: flex;     /* Flexbox layout for the page */
+  flex-direction: column; /* Stack header/main/footer vertically */
+  height: 100vh;     /* Full viewport height */
 }
 
 main {
@@ -447,7 +447,7 @@ main {
 
 /* Navbar: Clean and minimal */
 body.page-cast .navbar {
-  background: none; /* Remove background to make navbar transparent */
+  background: none; /* Transparent navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -456,56 +456,60 @@ body.page-cast .navbar {
   z-index: 10;
 }
 
-/* Navbar links styling: centered and spaced out */
+/* Navbar links styling */
 body.page-cast .navbar .nav-links {
   display: flex;
-  gap: 2rem; /* Space between links */
+  gap: 2rem;
 }
 
 body.page-cast .navbar .nav-links a {
-  color: #000; /* Black text for navbar links */
-  text-decoration: none; /* No underline */
-  font-size: 1.1rem; /* Adjust font size */
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
-
 /* Main content area: text on the left, form on the right */
 body.page-cast .content {
   display: flex;
-  justify-content: space-between; /* Align content side by side */
+  flex-wrap: nowrap;        /* Prevent wrapping */
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 2rem; /* Space between text and form */
+  gap: 2rem;
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  overflow-x: auto;         /* Allow horizontal scroll if too tight */
 }
 
 /* Text section: left-aligned */
 body.page-cast .content .text-section {
-  flex: 1; /* Take up remaining space */
-  max-width: 600px; /* Limit the width of the text section */
+  flex: 1 1 600px;         /* Grow/shrink with a base of 600px */
+  max-width: 600px;
 }
 
 body.page-cast .content .text-section h1,
 body.page-cast .content .text-section p {
-  font-family: 'Playfair Display', serif; /* Serif for text */
+  font-family: 'Playfair Display', serif;
 }
 
+/* Casting Form always to the right */
 .casting-form {
-  /* remove width:100% and flex-shrink */
-  flex: 0 1 600px;   /* do not grow, *do* shrink if needed, base = 600px */
-  max-width: 600px;  /* still caps it */
-  /* … */
+  flex: 0 0 600px;         /* Fixed 600px width, no shrink/grow */
+  max-width: 600px;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Casting Form Labels */
 .casting-form label {
-  font-family: 'Playfair Display', serif; /* Serif font for label text */
-  color: #333;  /* Dark grey for text */
+  font-family: 'Playfair Display', serif;
+  color: #333;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   display: block;
@@ -518,40 +522,39 @@ body.page-cast .content .text-section p {
   padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ddd;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px;
   font-size: 1rem;
-  font-family: 'Roboto', sans-serif; /* Sans-serif for inputs */
+  font-family: 'Roboto', sans-serif;
   color: #333;
-  box-sizing: border-box; /* Ensure padding doesn't overflow */
+  box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
 
 .casting-form input:focus,
 .casting-form textarea:focus {
-  border-color: #f00; /* Red border on focus */
-  outline: none; /* Remove the default focus outline */
+  border-color: #f00;
+  outline: none;
 }
 
 /* Submit button */
 .casting-form button {
-  background: #000; /* Black background for button */
-  color: #fff;      /* White text color */
+  background: #000;
+  color: #fff;
   padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px;
   cursor: pointer;
-  width: 100%; /* Full width button */
+  width: 100%;
   transition: background 0.3s ease;
 }
 
 .casting-form button:hover {
-  background: #333; /* Darker black on hover */
+  background: #333;
 }
 
-
-/* Responsiveness: Mobile-friendly */
+/* Remove stacking on mobile: always side by side */
 @media (max-width: 768px) {
   body.page-cast .navbar {
     padding: 1rem 1.5rem;
@@ -565,14 +568,15 @@ body.page-cast .content .text-section p {
     text-align: center;
   }
 
-  /* Stacking content vertically on smaller screens */
-  .content {
-    flex-direction: column;
-    gap: 2rem;
+  /* Keep content horizontally aligned on small screens */
+  body.page-cast .content {
+    flex-wrap: nowrap;
+    padding: 2rem 1rem;
+    gap: 1rem;
   }
 
   .casting-form {
-    max-width: 100%; /* Full width form on small screens */
-    margin-top: 2rem; /* Add some space above the form */
+    /* No change: remains 600px; user scrolls horizontally if needed */
   }
 }
+
