@@ -37,16 +37,17 @@
       <p class="bio">He/Him</p>
     </div>
 
-    <div class="gallery">
-      <img src="assets/images/talent/aaron/WMaaron2.jpg" alt="Aaron Image 1" />
-      <img src="assets/images/talent/aaron/WMaaron4.jpg" alt="Aaron Image 2" />
-      <img src="assets/images/talent/aaron/nomd_aaron1.jpeg" alt="Aaron Image 3" />
-      <img src="assets/images/talent/aaron/nomdaaron2.jpeg" alt="Aaron Image 4" />
-      <img src="assets/images/talent/aaron/brannen_aaron2.jpeg" alt="Aaron Image 5" />
-      <img src="assets/images/talent/aaron/brannen_aaron3.jpg" alt="Aaron Image 6" />
-      <img src="assets/images/talent/aaron/brannen_aaron4.jpg" alt="Aaron Image 7" />
-    </div>
-  </main>
+<div class="masonry-grid">
+  <img src="assets/images/talent/aaron/WMaaron2.jpg" alt="Aaron Image 1" />
+  <img src="assets/images/talent/aaron/WMaaron4.jpg" alt="Aaron Image 2" />
+  <img src="assets/images/talent/aaron/nomd_aaron1.jpeg" alt="Aaron Image 3" />
+  <img src="assets/images/talent/aaron/nomdaaron2.jpeg" alt="Aaron Image 4" />
+  <img src="assets/images/talent/aaron/brannen_aaron2.jpeg" alt="Aaron Image 5" />
+  <img src="assets/images/talent/aaron/brannen_aaron3.jpg" alt="Aaron Image 6" />
+  <img src="assets/images/talent/aaron/brannen_aaron4.jpg" alt="Aaron Image 7" />
+  <!-- Add more images as needed -->
+</div>
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -76,19 +77,18 @@
       });
     });
 
-    // Responsive horizontal margins based on image height
-    window.addEventListener('load', function () {
-      if (window.innerWidth >= 768) { // Only apply on larger screens
-        const galleryImages = document.querySelectorAll('.gallery img');
-        galleryImages.forEach(img => {
-          const height = img.offsetHeight;
-          const margin = height * 0.05; // 5% of height
-          img.style.marginLeft = `${margin}px`;
-          img.style.marginRight = `${margin}px`;
-        });
-      }
-    });
-  </script>
+  window.addEventListener('load', function () {
+    if (window.innerWidth >= 768) {
+      const images = document.querySelectorAll('.masonry-grid img');
+      images.forEach(img => {
+        const height = img.offsetHeight;
+        const margin = height * 0.05; // 5% of image height
+        img.style.marginLeft = `${margin}px`;
+        img.style.marginRight = `${margin}px`;
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
