@@ -354,14 +354,46 @@ body.page-profile-digis {
 
 /* Show the navbar again */
 body.page-profile-digis .navbar {
-  display: block; /* Change from 'none' to 'block' to make it visible */
+  display: block; /* Make the navbar visible */
+  background-color: #fff; /* Ensure background is consistent */
+  padding: 1rem; /* Add padding for consistent spacing */
+}
+
+/* Center the navbar content (links, etc.) */
+body.page-profile-digis .navbar .nav-links {
+  display: flex;
+  justify-content: center;  /* Center the links horizontally */
+  align-items: center;      /* Vertically center the items if necessary */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navbar links: adjust text color and spacing */
+body.page-profile-digis .navbar .nav-links a {
+  color: #000;  /* Set text color to black */
+  text-decoration: none;  /* Remove underline from links */
+  margin: 0 1rem;  /* Add spacing between links */
+  font-size: 1rem;  /* Adjust font size as needed */
+  padding: 0.5rem 1rem; /* Add padding around links */
+  transition: color 0.3s ease;
+}
+
+/* Navbar links on hover */
+body.page-profile-digis .navbar .nav-links a:hover {
+  color: #f00; /* Example: change text color on hover */
 }
 
 /* Button style */
 body.page-profile-digis .enter-button {
   background: rgba(0,0,0,0.8);
   color: #fff;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners for the button */
 }
+
 
 
 /*-----------------------------------
