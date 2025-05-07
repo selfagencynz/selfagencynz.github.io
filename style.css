@@ -42,17 +42,17 @@ body {
   display: block;
 }
 
-.nav-links {
+.navbar .nav-links {
   display: flex;
   gap: 2rem;
 }
 
-.nav-links li {
+.navbar .nav-links li {
   list-style: none;
   position: relative;
 }
 
-.nav-links a {
+.navbar .nav-links a {
   color: #000;
   text-transform: uppercase;
   font-size: 0.9rem;
@@ -61,12 +61,12 @@ body {
   transition: text-decoration 0.3s ease;
 }
 
-.nav-links a:hover {
+.navbar .nav-links a:hover {
   text-decoration: underline;
 }
 
 /* Dropdown */
-.dropdown-menu {
+.navbar .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -75,28 +75,33 @@ body {
   list-style: none;
   padding: 0.5rem 0;
   margin: 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   z-index: 1001;
   min-width: 160px;
 }
 
-.dropdown-menu li {
+.navbar .dropdown-menu li {
   white-space: nowrap;
 }
 
-.dropdown-menu a {
+.navbar .dropdown-menu a {
   display: block;
   padding: 0.5rem 1rem;
   color: #000;
   text-decoration: none;
 }
 
-.dropdown-menu a:hover {
+.navbar .dropdown-menu a:hover {
   background-color: #f0f0f0;
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown.open .dropdown-menu {
+/* Show on hover (desktop) */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Show when .open class is added (mobile) */
+.navbar .dropdown.open .dropdown-menu {
   display: block;
 }
 
@@ -127,7 +132,7 @@ body {
 ============================================================*/
 .talent-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Updated to 4 across */
   gap: 1.5rem;
   max-width: 90vw;
   margin: 2rem auto;
@@ -145,12 +150,12 @@ body {
   height: auto;
   object-fit: cover;
   filter: grayscale(100%);
-  transition: filter 0.3s ease;
   display: block;
+  transition: filter 0.3s ease;
 }
 
 .talent-card:hover .talent-img {
-  filter: grayscale(0%);
+  filter: none; /* Restore color on hover */
 }
 
 .overlay-text {
@@ -222,7 +227,8 @@ body {
   Forms (Application & Contact)
 ============================================================*/
 .application-form,
-.contact-form {
+.contact-form,
+.casting-form {
   max-width: 600px;
   margin: 0 auto 2rem auto;
   display: flex;
@@ -232,7 +238,8 @@ body {
 }
 
 .application-form label,
-.contact-form label {
+.contact-form label,
+.casting-form label {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -241,7 +248,9 @@ body {
 .application-form input,
 .application-form textarea,
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.casting-form input,
+.casting-form select {
   padding: 0.75rem;
   border: 1px solid #444;
   border-radius: 4px;
@@ -251,7 +260,8 @@ body {
 }
 
 .application-form button,
-.contact-form button {
+.contact-form button,
+.casting-form button {
   padding: 0.75rem;
   background-color: #ff9800;
   color: #000;
@@ -265,7 +275,8 @@ body {
 }
 
 .application-form button:hover,
-.contact-form button:hover {
+.contact-form button:hover,
+.casting-form button:hover {
   background-color: #e68900;
 }
 
@@ -299,6 +310,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .talent-grid,
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -322,14 +338,6 @@ body {
 
   .main-content {
     padding: 2rem 1rem;
-  }
-
-  .talent-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
