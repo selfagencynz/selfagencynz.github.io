@@ -76,15 +76,25 @@ body {
   flex-direction: column;
 }
 
-/* Ensure Footer Stays at the Bottom for all pages */
 footer {
-  background-color: #222;
-  color: #fff;
+  background-color: #000;  /* Black background */
+  color: #fff;  /* White text */
   text-align: center;
   padding: 1rem 0;
   position: relative;
   width: 100%;
-  margin-top: auto;  /* This ensures footer stays at the bottom */
+  margin-top: auto;  /* Ensure footer stays at the bottom */
+}
+
+footer a {
+  color: #fff;  /* White color for links */
+  text-decoration: none;  /* No underline */
+  transition: none;  /* Disable hover color change */
+}
+
+footer a:hover {
+  color: #fff;  /* Ensure no color change on hover */
+  text-decoration: none;  /* Keep no underline on hover */
 }
 
 /*-----------------------------------
