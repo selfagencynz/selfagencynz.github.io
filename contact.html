@@ -11,18 +11,23 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="logo.png" alt="Logo" class="logo-img">
-      </a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="talent.html">Talent</a></li>
-      <li><a href="#">Cast</a></li>
-      <li><a href="#">Reach Us</a></li>
-    </ul>
-  </nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.png" alt="Logo" class="logo-img" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="talent.html">Talent</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Reach Us</a>
+      <ul class="dropdown-menu">
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="be-represented-by-us.html">Be represented by us</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
   <!-- Main Content -->
   <main class="main-content">
@@ -36,6 +41,29 @@
       <a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a>
     </p>
   </footer>
+  
+  <!-- Place at bottom of <body> -->
+<script>
+  // Mobile/touch support: toggle dropdown on click
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggles = document.querySelectorAll('.dropdown-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+      });
+    });
+    // Close dropdown if clicked outside
+    document.addEventListener('click', function(e) {
+      toggles.forEach(toggle => {
+        const parent = toggle.parentElement;
+        if (!parent.contains(e.target)) {
+          parent.classList.remove('open');
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
