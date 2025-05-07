@@ -9,35 +9,32 @@
 </head>
 <body>
 
-
- <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="logo.png" alt="Logo" class="logo-img" />
-    </a>
-  </div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="talent.html">Talent</a></li>
-     <li><a href="cast.html">Cast</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">Reach Us</a>
-      <ul class="dropdown-menu">
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="be_represented_by_us.html">Be represented by us</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="talent.html">Talent</a></li>
+      <li><a href="cast.html">Cast</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Reach Us</a>
+        <ul class="dropdown-menu">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="be_represented_by_us.html">Be represented by us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <main class="main-content profile-gallery">
     <div class="profile-text">
       <h1>Aaron</h1>
-      <p class="bio">
-        He/Him
-      </p>
+      <p class="bio">He/Him</p>
     </div>
 
     <div class="gallery">
@@ -48,7 +45,6 @@
       <img src="assets/images/talent/aaron/brannen_aaron2.jpeg" alt="Aaron Image 5" />
       <img src="assets/images/talent/aaron/brannen_aaron3.jpg" alt="Aaron Image 6" />
       <img src="assets/images/talent/aaron/brannen_aaron4.jpg" alt="Aaron Image 7" />
-      
     </div>
   </main>
 
@@ -59,28 +55,40 @@
     </p>
   </footer>
 
-    <!-- Place at bottom of <body> -->
-<script>
-  // Mobile/touch support: toggle dropdown on click
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggles = document.querySelectorAll('.dropdown-toggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('open');
-      });
-    });
-    // Close dropdown if clicked outside
-    document.addEventListener('click', function(e) {
+  <!-- JavaScript -->
+  <script>
+    // Dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggles = document.querySelectorAll('.dropdown-toggle');
       toggles.forEach(toggle => {
-        const parent = toggle.parentElement;
-        if (!parent.contains(e.target)) {
-          parent.classList.remove('open');
-        }
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          this.parentElement.classList.toggle('open');
+        });
+      });
+      document.addEventListener('click', function(e) {
+        toggles.forEach(toggle => {
+          const parent = toggle.parentElement;
+          if (!parent.contains(e.target)) {
+            parent.classList.remove('open');
+          }
+        });
       });
     });
-  });
-</script>
+
+    // Responsive horizontal margins based on image height
+    window.addEventListener('load', function () {
+      if (window.innerWidth >= 768) { // Only apply on larger screens
+        const galleryImages = document.querySelectorAll('.gallery img');
+        galleryImages.forEach(img => {
+          const height = img.offsetHeight;
+          const margin = height * 0.05; // 5% of height
+          img.style.marginLeft = `${margin}px`;
+          img.style.marginRight = `${margin}px`;
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
