@@ -249,9 +249,18 @@ body.page-showcase .masonry-grid img {
   body.page-showcase .profile-gallery {
     grid-template-columns: 1fr;
   }
-  body.page-showcase .profile-gallery .masonry-grid {
-    grid-column: 1;
-  }
+  /*-----------------------------------
+  Profile Showcase: Text Above Carousel
+-----------------------------------*/
+body.page-showcase .profile-gallery {
+  /* single‑column stack: text first, then carousel */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
 }
 
 /*-----------------------------------
