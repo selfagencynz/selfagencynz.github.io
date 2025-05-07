@@ -554,16 +554,6 @@ body.page-cast .content .text-section p {
   background: #333; /* Darker black on hover */
 }
 
-/* Footer always at the bottom */
-footer {
-  background-color: #222; /* Dark background */
-  color: #fff;  /* White text */
-  text-align: center;
-  padding: 1rem 0;
-  position: relative;
-  width: 100%;
-  margin-top: auto;  /* Push footer to the bottom of the page */
-}
 
 /* Responsiveness: Mobile-friendly */
 @media (max-width: 768px) {
