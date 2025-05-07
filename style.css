@@ -205,6 +205,7 @@ body {
   padding-top: 0.5rem;
 }
 
+
 /*============================================================
   Generic Gallery
 ============================================================*/
@@ -221,6 +222,14 @@ body {
   height: auto;
   object-fit: cover;
   display: block;
+}
+------ADDED--------
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: margin 0.3s ease;
 }
 
 /*============================================================
