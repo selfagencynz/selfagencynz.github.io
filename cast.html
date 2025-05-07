@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cast – Self Agency</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="talent.html">Talent</a></li>
+      <li><a href="aotearoa.html">Aotearoa</a></li>
+      <li><a href="cast.html">Cast</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Reach Us</a>
+        <ul class="dropdown-menu">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="be_represented_by_us.html">Be represented by us</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Cast</h1>
+    <p>We specialise in street casting for any brief, no matter how big or small, we will find your people. Use the form to get in touch.</p>
+    <p>Alternatively, please direct PDF briefs to <a href="mailto:franca@selfagency.co.nz">franca@selfagency.co.nz</a></p>
+
+    <!-- Casting Form -->
+    <form class="casting-form" action="#" method="post">
+      <label for="seeking">I am seeking a</label>
+      <select id="seeking" name="seeking" required>
+        <option value="">Select</option>
+        <option value="self">Self</option>
+        <option value="selves">Selves</option>
+      </select>
+
+      <label for="deadline">I need this completed by</label>
+      <input type="date" id="deadline" name="deadline" required />
+
+      <label for="budget">This is my budget</label>
+      <input type="number" id="budget" name="budget" placeholder="$" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      <a href="https://www.instagram.com/self_agency_" target="_blank">@self_agency_</a>
+    </p>
+    <p>made by originstudio.online</p>
+  </footer>
+
+  <!-- JavaScript for Dropdown -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggles = document.querySelectorAll('.dropdown-toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          this.parentElement.classList.toggle('open');
+        });
+      });
+      document.addEventListener('click', function(e) {
+        toggles.forEach(toggle => {
+          const parent = toggle.parentElement;
+          if (!parent.contains(e.target)) {
+            parent.classList.remove('open');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
 
