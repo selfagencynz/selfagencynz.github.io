@@ -309,16 +309,6 @@ body.page-adrayprofile .masonry-grid img {
 }
 
 
-/* Responsive: on tablets & smaller, drop to 2 columns, then 1 */
-@media (max-width: 992px) {
-  body.page-adrayprofile .tight-grid {
-    column-count: 2;
-  }
-}
-@media (max-width: 600px) {
-  body.page-adrayprofile .tight-grid {
-    column-count: 1;
-  }
 }
 /* ADRAY PROFILE — make photos wider and push text to right */
 body.page-adrayprofile .profile-gallery {
