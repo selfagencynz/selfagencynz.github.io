@@ -170,14 +170,6 @@ body.page-talent {
   color: #fff;
 }
 
-body.page-talent .navbar {
-  background-color: #fff;
-  color: #000;
-}
-
-body.page-talent .navbar .nav-links a {
-  color: #000;
-}
 
 
 /*-----------------------------------
@@ -390,37 +382,6 @@ body.page-profile-digis {
   color: #000;
 }
 
-/* Ensure navbar on profile-digis looks the same as the one on the cast page */
-body.page-profile-digis .navbar {
-  background: #fff;  /* White background like the cast page */
-  padding: 1rem 2rem; /* Adjust padding for consistent spacing */
-}
-
-/* Navbar links: similar to the cast page style */
-body.page-profile-digis .navbar .nav-links {
-  display: flex;
-  justify-content: center;  /* Center the links horizontally */
-  align-items: center;      /* Vertically center the items if necessary */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Navbar links: Adjust text color and spacing like cast page */
-body.page-profile-digis .navbar .nav-links a {
-  color: #000;  /* Black text color */
-  text-decoration: none;  /* Remove underline */
-  margin: 0 1rem;  /* Space between links */
-  font-size: 1rem;  /* Consistent font size */
-  padding: 0.5rem 1rem; /* Padding for the links */
-  transition: color 0.3s ease;
-}
-
-/* Navbar links hover effect */
-body.page-profile-digis .navbar .nav-links a:hover {
-  color: #f00;  /* Red color on hover (adjust as needed) */
-}
-
 /* Button styling (same as before) */
 body.page-profile-digis .enter-button {
   background: rgba(0,0,0,0.8);
@@ -448,15 +409,6 @@ main {
   flex: 1; /* Allow main content to take up remaining space */
 }
 
-body.page-cast .navbar .nav-links a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
 
 /* Main content area: text on the left, form on the right */
 body.page-cast .content {
