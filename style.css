@@ -242,53 +242,7 @@ body.page-profile .profile-text .enter-button {
 /*-----------------------------------
   ADRAY PROFILE PAGE
 -----------------------------------*/
-body.page-adrayprofile .profile-gallery {
-  /* center and constrain overall gallery */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
 
-/* Two-col layout: text header above, images below in masonry */
-body.page-adrayprofile .profile-text {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* Masonry via columns on the image container */
-body.page-adrayprofile .tight-grid {
-  /* switch to .tight-grid instead of .masonry-grid */
-  column-count: 3;
-  column-gap: 1rem;
-}
-
-/* make each image break nicely in its column */
-body.page-adrayprofile .tight-grid img {
-  width: 100%;
-  display: inline-block;
-  margin-bottom: 1rem;
-  break-inside: avoid;
-  object-fit: cover;
-}
-/* ADRAY PROFILE: 4-across, no gaps */
-body.page-adrayprofile .tight-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-
-body.page-adrayprofile .tight-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* ADRAY PROFILE — fixed-size 4-across on left, text on right */
-body.page-adrayprofile .profile-gallery {
-  display: flex;
-  align-items: flex-start;
-}
 
 /* Images grid: 4 columns of 150px, no gaps */
 body.page-adrayprofile .tight-grid {
@@ -318,14 +272,6 @@ body.page-adrayprofile .profile-text {
 /*-----------------------------------
   ADRAY PROFILE (Chic-style two-column)
 -----------------------------------*/
-body.page-adrayprofile .profile-gallery {
-  display: grid;
-  grid-template-columns: 300px 1fr;  /* left column 300px, right fills rest */
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
 
 /* LEFT: Profile text & stats */
 body.page-adrayprofile .profile-text {
