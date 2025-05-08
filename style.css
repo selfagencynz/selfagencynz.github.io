@@ -393,7 +393,7 @@ body.page-adrayprofile .masonry-grid img {
 /* ADRAY PROFILE — make photos wider and push text to right */
 body.page-adrayprofile .profile-gallery {
   /* three parts photos, one part text */
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 4fr 1fr;
 }
 
 /* ensure the gallery stays in the first column */
