@@ -396,19 +396,21 @@ body.page-profile-digis .enter-button {
 /*-----------------------------------
   5. CAST PAGE (Updated with Footer & Layout Adjustments)
 -----------------------------------*/
+/* Import Poppins & Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap');
 
 body.page-cast {
+  font-family: 'Open Sans', sans-serif;  /* body text */
   background: #fff;   /* White background */
-  color: #000;       /* Default text color black */
-  display: flex;     /* Flexbox layout for the page */
+  color: #000;        /* Default text color black */
+  display: flex;      /* Flexbox layout for the page */
   flex-direction: column; /* Stack header/main/footer vertically */
-  height: 100vh;     /* Full viewport height */
+  height: 100vh;      /* Full viewport height */
 }
 
 main {
   flex: 1; /* Allow main content to take up remaining space */
 }
-
 
 /* Main content area: text on the left, form on the right */
 body.page-cast .content {
@@ -425,26 +427,30 @@ body.page-cast .content {
 
 /* Text section: left-aligned */
 body.page-cast .content .text-section {
-  flex: 1 1 600px;         /* Grow/shrink with a base of 600px */
+  flex: 1 1 600px;          /* Grow/shrink with a base of 600px */
   max-width: 600px;
 }
 
-body.page-cast .content .text-section h1,
-body.page-cast .content .text-section p {
-  font-family: 'Playfair Display', serif;
+/* Heading uses Poppins */
+body.page-cast .content .text-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
+
+/* Paragraphs inherit Open Sans from body */
 
 /* Casting Form always to the right */
 .casting-form {
-  flex: 0 0 600px;         /* Fixed 600px width, no shrink/grow */
+  flex: 0 0 600px;          /* Fixed 600px width, no shrink/grow */
   max-width: 600px;
   padding: 2rem;
   background: #fff;
 }
 
-/* Casting Form Labels */
+/* Form labels in Open Sans */
 .casting-form label {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
   color: #333;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -460,7 +466,7 @@ body.page-cast .content .text-section p {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #333;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
@@ -510,20 +516,19 @@ body.page-cast .content .text-section p {
     padding: 2rem 1rem;
     gap: 1rem;
   }
-
-  .casting-form {
-    /* No change: remains 600px; user scrolls horizontally if needed */
-  }
+  /* casting-form remains same width; horizontal scroll if needed */
 }
-/* Under-text image in the Cast page */
+
+/* Under‑text image in the Cast page */
 body.page-cast .content .text-section .text-image {
   display: block;       /* ensure it’s on its own line */
   width: 100%;          /* fill the text column */
-  max-width: 400px;     /* optional cap so it doesn’t get huge */
-  margin: 1.5rem 0 0;   /* space above (and none below) */
-  object-fit: cover;    /* crop/scale nicely if needed */
-  border-radius: 5px;   /* optional rounding to match form */
+  max-width: 400px;     /* optional cap */
+  margin: 1.5rem 0 0;   /* space above */
+  object-fit: cover;    /* crop/scale nicely */
+  border-radius: 5px;   /* match form rounding */
 }
+
 
 /*-----------------------------------
   ADRAY PROFILE PAGE (Chic-style two-column + 4-across masonry)
