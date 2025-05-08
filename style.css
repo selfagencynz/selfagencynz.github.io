@@ -597,8 +597,8 @@ body.page-cast .content .text-section .text-image {
 
 /* 1) Two-column wrapper */
 body.page-adrayprofile .profile-gallery {
-  display: grid;
-  grid-template-columns: 4fr 1fr; /* photos 80%, text 20% */
+  display: grid !important;
+  grid-template-columns: 4fr 1fr !important; /* photos 80%, text 20% */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -663,9 +663,5 @@ body.page-adrayprofile .profile-text .stats li {
   }
 }
 
-/* 🛠️ Force two-column grid on Adray page */
-body.page-adrayprofile .profile-gallery {
-  display: grid !important;
-  grid-template-columns: 4fr 1fr !important;
-}
+
 
