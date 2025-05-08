@@ -439,7 +439,6 @@ body.page-profile-digis .enter-button {
 body.page-cast {
   background: #fff;   /* White background */
   color: #000;       /* Default text color black */
-  font-family:'Playfair Display', serif;  /* Modern sans-serif for body text */
   display: flex;     /* Flexbox layout for the page */
   flex-direction: column; /* Stack header/main/footer vertically */
   height: 100vh;     /* Full viewport height */
