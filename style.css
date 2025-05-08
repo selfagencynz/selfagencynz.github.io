@@ -238,6 +238,51 @@ body.page-profile .profile-text .enter-button {
     grid-column: 1;
   }
 }
+
+/*-----------------------------------
+  ADRAY PROFILE PAGE
+-----------------------------------*/
+body.page-adrayprofile .profile-gallery {
+  /* center and constrain overall gallery */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Two-col layout: text header above, images below in masonry */
+body.page-adrayprofile .profile-text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Masonry via columns on the image container */
+body.page-adrayprofile .tight-grid {
+  /* switch to .tight-grid instead of .masonry-grid */
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+/* make each image break nicely in its column */
+body.page-adrayprofile .tight-grid img {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 1rem;
+  break-inside: avoid;
+  object-fit: cover;
+}
+
+/* Responsive: on tablets & smaller, drop to 2 columns, then 1 */
+@media (max-width: 992px) {
+  body.page-adrayprofile .tight-grid {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  body.page-adrayprofile .tight-grid {
+    column-count: 1;
+  }
+}
+
 /*-----------------------------------
   PROFILE SHOWCASE (STACKED VIEW)
 -----------------------------------*/
