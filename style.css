@@ -449,23 +449,6 @@ main {
   flex: 1; /* Allow main content to take up remaining space */
 }
 
-/* Navbar: Clean and minimal */
-body.page-cast .navbar {
-  background: none; /* Transparent navbar */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  position: relative;
-  z-index: 10;
-}
-
-/* Navbar links styling */
-body.page-cast .navbar .nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
 body.page-cast .navbar .nav-links a {
   color: #000;
   text-decoration: none;
