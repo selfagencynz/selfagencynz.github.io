@@ -291,7 +291,7 @@ body.page-adrayprofile .profile-text .stats li {
 }
 
 /* 4) Responsive stack on narrower viewports */
-@media (max-width: 992px) {
+@media (max-width: 600px) {
   body.page-adrayprofile .profile-gallery {
     grid-template-columns: 1fr;  /* stack columns vertically */
   }
