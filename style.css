@@ -394,13 +394,13 @@ body.page-profile-digis .enter-button {
 
 
 /*-----------------------------------
-  5. CAST PAGE (Updated with Footer & Layout Adjustments)
+  5. CAST PAGE (Montserrat + Roboto)
 -----------------------------------*/
-/* Import Poppins & Open Sans */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap');
+/* Import Montserrat & Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@300;400;500&display=swap');
 
 body.page-cast {
-  font-family: 'Open Sans', sans-serif;  /* body text */
+  font-family: 'Roboto', sans-serif;  /* body text */
   background: #fff;   /* White background */
   color: #000;        /* Default text color black */
   display: flex;      /* Flexbox layout for the page */
@@ -431,13 +431,13 @@ body.page-cast .content .text-section {
   max-width: 600px;
 }
 
-/* Heading uses Poppins */
+/* Heading uses Montserrat */
 body.page-cast .content .text-section h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
-/* Paragraphs inherit Open Sans from body */
+/* Paragraphs inherit Roboto from body */
 
 /* Casting Form always to the right */
 .casting-form {
@@ -447,10 +447,10 @@ body.page-cast .content .text-section h1 {
   background: #fff;
 }
 
-/* Form labels in Open Sans */
+/* Form labels in Roboto */
 .casting-form label {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   color: #333;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -466,7 +466,7 @@ body.page-cast .content .text-section h1 {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #333;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
@@ -516,10 +516,9 @@ body.page-cast .content .text-section h1 {
     padding: 2rem 1rem;
     gap: 1rem;
   }
-  /* casting-form remains same width; horizontal scroll if needed */
 }
 
-/* Under‑text image in the Cast page */
+/* Under-text image in the Cast page */
 body.page-cast .content .text-section .text-image {
   display: block;       /* ensure it’s on its own line */
   width: 100%;          /* fill the text column */
