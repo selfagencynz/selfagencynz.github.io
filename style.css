@@ -653,4 +653,14 @@ body.page-cast .content .text-section p {
     /* No change: remains 600px; user scrolls horizontally if needed */
   }
 }
+/* Under-text image in the Cast page */
+body.page-cast .content .text-section .text-image {
+  display: block;       /* ensure it’s on its own line */
+  width: 100%;          /* fill the text column */
+  max-width: 400px;     /* optional cap so it doesn’t get huge */
+  margin: 1.5rem 0 0;   /* space above (and none below) */
+  object-fit: cover;    /* crop/scale nicely if needed */
+  border-radius: 5px;   /* optional rounding to match form */
+}
+
 
