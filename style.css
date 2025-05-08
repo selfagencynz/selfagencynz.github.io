@@ -270,6 +270,20 @@ body.page-adrayprofile .tight-grid img {
   break-inside: avoid;
   object-fit: cover;
 }
+/* ADRAY PROFILE: 4-across, no gaps */
+body.page-adrayprofile .tight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+body.page-adrayprofile .tight-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 
 /* Responsive: on tablets & smaller, drop to 2 columns, then 1 */
 @media (max-width: 992px) {
