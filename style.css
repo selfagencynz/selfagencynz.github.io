@@ -311,7 +311,7 @@ body.page-adrayprofile .tight-grid img {
 body.page-adrayprofile .profile-text {
   order: 2;       /* ensure text comes after the grid */
   margin-left: 2rem;
-  max-width: 400px; /* or whatever you prefer */
+  max-width: 200px; /* or whatever you prefer */
   text-align: left;
 }
 
