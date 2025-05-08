@@ -250,7 +250,7 @@ body.page-adrayprofile .profile-gallery {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0 1rem 2rem; 
 }
 
 /* 2) Masonry-style photos on the left */
