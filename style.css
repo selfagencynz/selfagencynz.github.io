@@ -390,6 +390,27 @@ body.page-adrayprofile .masonry-grid img {
     column-count: 1;
   }
 }
+/* ADRAY PROFILE — make photos wider and push text to right */
+body.page-adrayprofile .profile-gallery {
+  /* three parts photos, one part text */
+  grid-template-columns: 3fr 1fr;
+}
+
+/* ensure the gallery stays in the first column */
+body.page-adrayprofile .masonry-grid {
+  grid-column: 1;
+}
+
+/* push the text into the second column */
+body.page-adrayprofile .profile-text {
+  grid-column: 2;
+  /* optionally align text to the right edge of its column */
+  text-align: left;
+  /* tighten up its width if desired: */
+  max-width: 300px;
+}
+
+/* if you had hard-coded a 300px left column before, remove that and rely on the 3fr/1fr ratio above */
 
 /*-----------------------------------
   PROFILE SHOWCASE (STACKED VIEW)
