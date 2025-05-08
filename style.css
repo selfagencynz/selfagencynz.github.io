@@ -244,22 +244,6 @@ body.page-profile .profile-text .enter-button {
 -----------------------------------*/
 
 
-/* Images grid: 4 columns of 150px, no gaps */
-body.page-adrayprofile .tight-grid {
-  order: 1; /* ensure grid comes first */
-  display: grid;
-  grid-template-columns: repeat(4, 150px);
-  grid-auto-rows: 150px;
-  gap: 0;
-}
-
-/* Make each image fill its cell */
-body.page-adrayprofile .tight-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 /* Text block on the right */
 body.page-adrayprofile .profile-text {
