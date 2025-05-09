@@ -17,8 +17,7 @@ h1, h2, h3, h4, h5, h6,
 .accent {
   font-family: 'Playfair Display', serif;
 }
-
-/* Navbar Defaults */
+/* Base Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -27,7 +26,11 @@ h1, h2, h3, h4, h5, h6,
   background-color: #fff;
   color: #000;
 }
-.navbar .logo-img { height: 40px; }
+
+.navbar .logo-img {
+  height: 40px;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -35,15 +38,22 @@ h1, h2, h3, h4, h5, h6,
   margin: 0;
   padding: 0;
 }
+
 .nav-links a {
   text-decoration: none;
   font-weight: 500;
   color: inherit;
 }
-.nav-links a:hover { text-decoration: underline; }
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
 
 /* Dropdown */
-.dropdown { position: relative; }
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -52,16 +62,24 @@ h1, h2, h3, h4, h5, h6,
   background: #fff;
   padding: 0.5rem 0;
   list-style: none;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  min-width: 150px;
 }
-.dropdown.open .dropdown-menu { display: block; }
+
 .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1.5rem;
   white-space: nowrap;
   color: inherit;
 }
+
+/* Show on hover or keyboard focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
 /* Apply Flexbox Layout to the Body */
 html, body {
   height: 100%;  /* Full height to allow content to stretch */
