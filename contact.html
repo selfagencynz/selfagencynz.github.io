@@ -9,8 +9,8 @@
 </head>
 <body class="page-cast">
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
+<!-- Navigation Bar -->
+<nav class="navbar">
   <div class="logo">
     <a href="index.html">
       <img src="logo.png" alt="Logo" class="logo-img" />
@@ -20,15 +20,17 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="talent.html">Talent</a></li>
     <li><a href="cast.html">Cast</a></li>
-    <li class="dropdown">
+    <li class="dropdown" tabindex="0" aria-haspopup="true" aria-expanded="false">
       <a href="#" class="dropdown-toggle">Reach Us</a>
-      <ul class="dropdown-menu">
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="be_represented_by_us.html">Be represented by us</a></li>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="contact.html" role="menuitem">Contact</a></li>
+        <li><a href="be_represented_by_us.html" role="menuitem">Be represented by us</a></li>
       </ul>
     </li>
   </ul>
 </nav>
+
+  
 
   <!-- Main Content -->
   <main class="content">
