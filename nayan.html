@@ -28,7 +28,7 @@
     </ul>
   </nav>
 
-  <!-- Showcase Content -->
+   <!-- Showcase Content -->
   <main class="main-content">
     <section class="profile-gallery">
 
@@ -39,67 +39,84 @@
         <p><a href="nayan.digis.html" class="enter-button"> Digis </a></p>
       </div>
 
-       <!-- Carousel Wrapper -->
+      <!-- Carousel Wrapper -->
       <div class="carousel-wrapper">
-        <button class="carousel-button prev">&#10094;</button>
+        <!-- Prev -->
+        <button class="carousel-button prev" aria-label="Previous image">&#10094;</button>
 
-        <div class="carousel-track-container">
-          <ul class="carousel-track">
-            <!-- Slide 1 -->
-            <li class="slide">
-              <img src="assets/images/talent/nayan/buddy_nayan1.jpg" alt="Nayan 1" />
-              <img src="assets/images/talent/nayan/art_nayan2.jpg" alt="Nayan 2" />
-            </li>
-            <!-- Slide 2 -->
-            <li class="slide">
-              <img src="assets/images/talent/nayan/mag_nayan1.jpeg" alt="Nayan 3" />
-              <img src="assets/images/talent/nayan/meg_nayan1.jpg" alt="Nayan 4" />
-            </li>
-            <!-- Add more slides as needed, grouping two images per slide -->
-          </ul>
+        <!-- Main image viewport -->
+        <div class="carousel-main">
+          <img 
+            src="assets/images/talent/nayan/buddy_nayan1.jpg" 
+            alt="Nayan 1" 
+            class="carousel-current"
+          />
         </div>
 
-        <button class="carousel-button next">&#10095;</button>
+        <!-- Next -->
+        <button class="carousel-button next" aria-label="Next image">&#10095;</button>
+
+        <!-- Thumbnail strip -->
+        <div class="carousel-thumbs">
+          <img 
+            src="assets/images/talent/nayan/buddy_nayan1.jpg" 
+            data-full="assets/images/talent/nayan/buddy_nayan1.jpg" 
+            alt="Thumb 1" 
+            class="thumb active"
+          />
+          <img 
+            src="assets/images/talent/nayan/art_nayan2.jpg" 
+            data-full="assets/images/talent/nayan/art_nayan2.jpg" 
+            alt="Thumb 2" 
+            class="thumb"
+          />
+          <img 
+            src="assets/images/talent/nayan/mag_nayan1.jpeg" 
+            data-full="assets/images/talent/nayan/mag_nayan1.jpeg" 
+            alt="Thumb 3" 
+            class="thumb"
+          />
+          <img 
+            src="assets/images/talent/nayan/meg_nayan1.jpg" 
+            data-full="assets/images/talent/nayan/meg_nayan1.jpg" 
+            alt="Thumb 4" 
+            class="thumb"
+          />
+          <!-- add more thumbnails here as needed -->
+        </div>
       </div>
 
     </section>
   </main>
 
-  <!-- Footer (same as other pages) -->
-  <footer class="footer">
-    <p><a href="https://www.instagram.com/self_agency_" target="_blank">@selfagency</a></p>
-  </footer>
-<script>
-  (function() {
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    let currentSlide = 0;
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImg = document.querySelector('.carousel-current');
+      const thumbs = Array.from(document.querySelectorAll('.carousel-thumbs .thumb'));
+      let currentIdx = thumbs.findIndex(t => t.classList.contains('active'));
 
-    function updateCarousel() {
-      const slideWidth = track.clientWidth;
-      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-    }
-
-    nextButton.addEventListener('click', () => {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateCarousel();
+      function showImage(idx) {
+        // wrap around
+        currentIdx = (idx + thumbs.length) % thumbs.length;
+        // swap active thumb
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumbs[currentIdx].classList.add('active');
+        // update main image
+        mainImg.src = thumbs[currentIdx].dataset.full;
       }
-    });
 
-    prevButton.addEventListener('click', () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateCarousel();
-      }
-    });
+      // thumbnail clicks
+      thumbs.forEach((thumb, idx) => {
+        thumb.addEventListener('click', () => showImage(idx));
+      });
 
-    window.addEventListener('resize', updateCarousel);
-    updateCarousel();
-  })();
-</script>
+      // prev/next buttons
+      document.querySelector('.carousel-button.prev')
+        .addEventListener('click', () => showImage(currentIdx - 1));
+      document.querySelector('.carousel-button.next')
+        .addEventListener('click', () => showImage(currentIdx + 1));
+    });
+  </script>
 
 </body>
 </html>
