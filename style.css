@@ -258,93 +258,40 @@ body.page-profile .profile-text .enter-button {
 html, body {
   overflow: auto !important;
 }
-
-/* One-column layout: text above image list */
+/* ------ Two-column layout ------ */
 body.page-showcase .profile-gallery {
   display: grid;
-  grid-template-columns: 1fr;  /* force single column */
-  gap: 2rem;                   /* spacing between text & carousel */
+  grid-template-columns: 1fr 1fr;  /* text on left, carousel on right */
+  gap: 2rem;
   padding: 2rem 1rem;
-  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 1200px;           /* cap width */
 }
 
-/* Centered profile text */
-body.page-showcase .profile-text {
-  text-align: center;
-}
+/* Left column stays the same */
+body.page-showcase .profile-text { text-align: left; }
 
-body.page-showcase .profile-text h1 {
-  margin: 0 0 0.5rem;
-  font-size: 2rem;
-}
-
-body.page-showcase .profile-text p {
-  display: inline-block;
-  margin: 0 0.5rem;
-  font-size: 1rem;
-}
-
-body.page-showcase .profile-text .enter-button {
-  background: none;
-  text-decoration: underline;
-  font-weight: normal;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* Vertical image list or carousel wrapper */
-body.page-showcase .masonry-grid,
-body.page-showcase .carousel-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-/* Stack images with spacing */
-body.page-showcase .masonry-grid img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 1.5rem;
-  object-fit: cover;
-}
-
-/* Carousel-specific layout */
+/* ------ Carousel styling ------ */
 .carousel-wrapper {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-main {
   width: 100%;
-}
-
-.carousel-track-container {
   overflow: hidden;
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.4s ease;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.slide {
-  flex: 0 0 100%;
-  display: flex;
-  gap: 1rem;
-}
-
-.slide img {
-  width: 50%;
+.carousel-current {
+  width: 100%;
   height: auto;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
-/* Carousel buttons */
+/* Prev/Next buttons */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -356,12 +303,46 @@ body.page-showcase .masonry-grid img {
   cursor: pointer;
   z-index: 2;
 }
-
 .carousel-button.prev { left: 0.5rem; }
 .carousel-button.next { right: 0.5rem; }
+.carousel-button:hover { background: rgba(255,255,255,1); }
 
-.carousel-button:hover {
-  background: rgba(255,255,255,1);
+/* Thumbnails row */
+.carousel-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+.carousel-thumbs .thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.carousel-thumbs .thumb.active,
+.carousel-thumbs .thumb:hover {
+  opacity: 1;
+  border: 2px solid #333;
+}
+.carousel-main {
+  aspect-ratio: 4/3;  /* or whatever your images are */
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  body.page-showcase .profile-gallery {
+    grid-template-columns: 1fr;
+  }
+  body.page-showcase .profile-text {
+    text-align: center;
+  }
+  .carousel-thumbs .thumb {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /*-----------------------------------
